@@ -1,44 +1,95 @@
 # SisCobro
 
-Sistema web para gestionar docentes, periodos y cobros de la Universidad Privada Domingo Savio.
+Aplicacion web para organizar docentes, periodos academicos y cobros de la Universidad Privada Domingo Savio.
 
-## Funcionalidades
+SisCobro permite llevar el control de pagos desde el navegador, consultar el estado de cada periodo y generar una vista general de los cobros registrados.
 
-- Registro y administracion de docentes.
-- Creacion y seleccion de periodos de trabajo.
-- Registro y seguimiento de pagos.
+## Funcionalidades principales
+
+- Gestion de docentes.
+- Creacion, seleccion y administracion de periodos.
+- Registro de pagos y control de cobros pendientes.
+- Busqueda y ordenamiento de registros.
+- Panel de indicadores por periodo.
 - Reporte general de cobros.
-- Notas generales por periodo.
-- Cambio entre tema claro y oscuro.
+- Notas generales para cada periodo.
+- Tema claro y oscuro.
 - Exportacion e importacion de respaldos en formato JSON.
 
 ## Requisitos
 
-- Un navegador web moderno.
-- No requiere instalacion de dependencias ni servidor.
+- Navegador web moderno: Chrome, Edge, Firefox o Safari.
+- Conexion a internet para cargar el editor de texto Quill desde su CDN.
 
-## Uso
+No requiere Node.js, base de datos ni instalacion de dependencias para ejecutar la aplicacion.
+
+## Ejecucion
+
+### Opcion 1: abrir directamente
 
 1. Clona o descarga este repositorio.
-2. Abre `index.html` en un navegador.
-3. Selecciona o crea un periodo.
-4. Registra docentes y pagos desde las pestanas correspondientes.
+2. Abre `index.html` en el navegador.
+3. Crea un periodo y registra los docentes y pagos correspondientes.
 
-Los datos se guardan localmente en el navegador mediante `localStorage`. Para trasladar los datos a otro equipo, utiliza las opciones de exportacion e importacion disponibles en la configuracion.
+### Opcion 2: servidor local
 
-## Estructura
+Para evitar restricciones del navegador con archivos locales, puedes servir la carpeta con cualquier servidor estatico. Por ejemplo, si tienes Python instalado:
 
-- `index.html`: interfaz principal.
-- `style.css`: estilos de la aplicacion.
-- `script.js`: inicializacion y funciones globales.
-- `js/`: modulos de base de datos, docentes, periodos, cobros y reportes.
+```bash
+python -m http.server 8000
+```
+
+Luego visita <http://localhost:8000>.
+
+## Datos y respaldos
+
+Los datos se almacenan localmente en el navegador mediante `localStorage`; no se envian a un servidor externo.
+
+Para evitar perder informacion:
+
+1. Abre la seccion de configuracion.
+2. Exporta periodicamente la base de datos en formato JSON.
+3. Guarda el archivo en un lugar seguro.
+4. Usa la opcion de importacion para restaurar un respaldo.
+
+Los datos de un navegador no se comparten automaticamente con otros equipos o navegadores.
+
+## Estructura del proyecto
+
+```text
+.
+├── index.html          # Interfaz principal
+├── style.css           # Estilos de la aplicacion
+├── script.js           # Inicializacion y funciones globales
+├── js/
+│   ├── app.js          # Navegacion y comportamiento general
+│   ├── db.js           # Estado y persistencia local
+│   ├── docentes.js     # Gestion de docentes
+│   ├── periodos.js     # Gestion de periodos
+│   ├── cobros.js       # Registro y seguimiento de cobros
+│   └── reportes.js     # Reportes generales
+└── doc.py              # Generacion opcional de un informe Word
+```
 
 ## Tecnologias
 
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript vanilla
+- `localStorage`
 - Quill 1.3.6 mediante CDN
+- Python y `python-docx` para el script opcional `doc.py`
+
+## Desarrollo
+
+El proyecto no utiliza un proceso de compilacion. Los cambios en HTML, CSS o JavaScript pueden probarse recargando la pagina en el navegador.
+
+Antes de publicar cambios, verifica que:
+
+- La aplicacion se abre correctamente.
+- Se pueden crear docentes y periodos.
+- Los cobros se guardan y aparecen en los reportes.
+- La exportacion e importacion de respaldos funciona correctamente.
 
 ## Autor
 
