@@ -109,7 +109,14 @@ function renderCobros() {
                     <button onclick="cambiarEstadoPago(${c.docenteId}, true)" class="btn-pagar">Pagar</button>
                 </div>`;
     }
-
+    let celdaRuta = "❌";
+    if (c.linkRespaldo) {
+        // Si hay link, mostramos un botón clickeable para abrir la imagen
+        celdaRuta = `<a href="${c.linkRespaldo}" target="_blank" title="Ver Respaldo en Drive" style="text-decoration: none; font-size: 1.2rem; cursor: pointer;">🖼️</a>`;
+    } else if (c.hojaRuta) {
+        // Si solo se marcó el check pero no se subió archivo
+        celdaRuta = "✅";
+    }
     // Fila sin la columna final de acciones; las acciones están flotando en el nombre
     tbody.innerHTML += `
             <tr data-estado="${c.aprobado ? "aprobado" : "pendiente"}" 
@@ -127,7 +134,7 @@ function renderCobros() {
                         </div>
                     </div>
                 </td>
-                <td style="text-align:center">${c.hojaRuta ? "✅" : "❌"}</td>
+                <td style="text-align:center">${celdaRuta}</td>
                 <td>Bs. ${c.atraso.toFixed(2)}</td>
                 <td>Bs. ${c.actividad.toFixed(2)}</td>
                 <td><b>Bs. ${total.toFixed(2)}</b></td>
@@ -238,6 +245,9 @@ function abrirModalCobro(docenteId = null) {
     document.getElementById("modal-titulo").textContent =
       "Nuevo Registro de Cobro";
     document.getElementById("input-observacion").value = "";
+    document.getElementById("input-archivo-ruta").value = "";
+    document.getElementById("nombre-archivo-txt").textContent = "Sin archivo";
+    document.getElementById("nombre-archivo-txt").style.color = "#64748b";
   } else {
     // Si enviamos docenteId (estamos editando un registro existente del mes)
     const c = datos.cobros.find(
@@ -259,25 +269,58 @@ function cerrarModal() {
   document.getElementById("modal-cobro").style.display = "none";
 }
 
-function guardarCobro(e) {
+async function guardarCobro(e) {
   e.preventDefault();
   const dId = parseInt(document.getElementById("select-docente-cobro").value);
   if (!dId) return;
 
+  // --- LÓGICA DE SUBIDA A DRIVE Y CARPETAS ---
+  const btnGuardar = e.target.querySelector('button[type="submit"]');
+  const fileInput = document.getElementById("input-archivo-ruta");
+  let linkRespaldo = null;
+
+  // Obtenemos los datos del docente para armar el nombre de su carpeta
+  const docente = datos.docentes.find((d) => d.id === dId);
+  // Ejemplo: "CORTEZ JOSE"
+  const nombreCarpetaDocente = docente ? `${docente.paterno} ${docente.nombre}`.toUpperCase() : "DESCONOCIDO";
+
+  // Si el usuario seleccionó un archivo, bloqueamos el botón y lo subimos
+  if (fileInput.files.length > 0) {
+      btnGuardar.innerText = "Subiendo y organizando... ⏳";
+      btnGuardar.disabled = true;
+      
+      // Enviamos el archivo Y el nombre del docente a Drive
+      linkRespaldo = await subirArchivoADrive(fileInput.files[0], nombreCarpetaDocente);
+      
+      btnGuardar.innerText = "Guardar";
+      btnGuardar.disabled = false;
+  }
+  // --------------------------------
+
   datos.cobros = datos.cobros.filter(
     (c) => !(c.docenteId === dId && c.periodoId === datos.periodoActivoId),
   );
+
   datos.cobros.push({
     periodoId: datos.periodoActivoId,
     docenteId: dId,
     hojaRuta: document.getElementById("check-hoja-ruta").checked,
     atraso: parseFloat(document.getElementById("input-atraso").value) || 0,
-    actividad:
-      parseFloat(document.getElementById("input-actividad").value) || 0,
+    actividad: parseFloat(document.getElementById("input-actividad").value) || 0,
     observacion: document.getElementById("input-observacion").value.trim(),
+    linkRespaldo: linkRespaldo // Guardamos el link generado por Drive
   });
+  
   guardarYRefrescar();
   cerrarModal();
+}
+
+function limpiarSeleccionArchivo() {
+    document.getElementById("input-archivo-ruta").value = "";
+    const texto = document.getElementById("nombre-archivo-txt");
+    texto.textContent = "Sin archivo";
+    texto.style.color = "#64748b";
+    texto.style.fontWeight = "normal";
 }
 function borrarCobro(docenteId) {
   datos.cobros = datos.cobros.filter(
@@ -427,4 +470,16 @@ function filtrarCobrosAvanzado() {
       row.style.display = "none";
     }
   }
+}
+function actualizarNombreArchivo(input) {
+    const texto = document.getElementById('nombre-archivo-txt');
+    if (input.files && input.files[0]) {
+        texto.textContent = "✅ " + input.files[0].name;
+        texto.style.color = "#059669"; // Verde éxito
+        texto.style.fontWeight = "bold";
+    } else {
+        texto.textContent = "Sin archivo";
+        texto.style.color = "#64748b";
+        texto.style.fontWeight = "normal";
+    }
 }

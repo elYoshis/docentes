@@ -1,96 +1,89 @@
 # SisCobro
 
-Aplicacion web para organizar docentes, periodos academicos y cobros de la Universidad Privada Domingo Savio.
+Sistema para la gestión de docentes, periodos académicos y cobros de la Universidad Privada Domingo Savio.
 
-SisCobro permite llevar el control de pagos desde el navegador, consultar el estado de cada periodo y generar una vista general de los cobros registrados.
+SisCobro es una aplicación web ligera para controlar pagos, consultar el estado de cada periodo y generar reportes de cobros sin depender de un servidor externo.
 
-## Funcionalidades principales
+## Características
 
-- Gestion de docentes.
-- Creacion, seleccion y administracion de periodos.
-- Registro de pagos y control de cobros pendientes.
-- Busqueda y ordenamiento de registros.
-- Panel de indicadores por periodo.
-- Reporte general de cobros.
-- Notas generales para cada periodo.
-- Tema claro y oscuro.
-- Exportacion e importacion de respaldos en formato JSON.
+- Gestión de docentes con búsqueda por nombre, apellido o CI.
+- Administración de periodos académicos.
+- Registro de cobros y seguimiento de pagos pendientes.
+- Filtros por estado y hoja de ruta.
+- Indicadores del periodo con resumen de atrasos y actividades.
+- Carga masiva de docentes para cada periodo.
+- Registro manual de pagos y aprobación de movimientos.
+- Notas generales por periodo.
+- Exportación de reportes en PDF y Excel.
+- Respaldo y restauración de datos en formato JSON.
+- Modo claro y oscuro.
+- Integración con Google Drive para almacenamiento documental.
 
-## Requisitos
+## Demo
 
-- Navegador web moderno: Chrome, Edge, Firefox o Safari.
-- Conexion a internet para cargar el editor de texto Quill desde su CDN.
-
-No requiere Node.js, base de datos ni instalacion de dependencias para ejecutar la aplicacion.
-
-## Ejecucion
-
-### Opcion 1: abrir directamente
+Puedes abrir la aplicación directamente en el navegador:
 
 1. Clona o descarga este repositorio.
-2. Abre `index.html` en el navegador.
-3. Crea un periodo y registra los docentes y pagos correspondientes.
+2. Abre `index.html`.
+3. Comienza creando un periodo y registrando docentes y pagos.
 
-### Opcion 2: servidor local
-
-Para evitar restricciones del navegador con archivos locales, puedes servir la carpeta con cualquier servidor estatico. Por ejemplo, si tienes Python instalado:
+También puedes ejecutar el proyecto con un servidor local:
 
 ```bash
 python -m http.server 8000
 ```
 
-Luego visita <http://localhost:8000>.
-
-## Datos y respaldos
-
-Los datos se almacenan localmente en el navegador mediante `localStorage`; no se envian a un servidor externo.
-
-Para evitar perder informacion:
-
-1. Abre la seccion de configuracion.
-2. Exporta periodicamente la base de datos en formato JSON.
-3. Guarda el archivo en un lugar seguro.
-4. Usa la opcion de importacion para restaurar un respaldo.
-
-Los datos de un navegador no se comparten automaticamente con otros equipos o navegadores.
+Luego visita: http://localhost:8000
 
 ## Estructura del proyecto
 
 ```text
 .
-├── index.html          # Interfaz principal
-├── style.css           # Estilos de la aplicacion
-├── script.js           # Inicializacion y funciones globales
+├── index.html
+├── style.css
+├── script.js
 ├── js/
-│   ├── app.js          # Navegacion y comportamiento general
-│   ├── db.js           # Estado y persistencia local
-│   ├── docentes.js     # Gestion de docentes
-│   ├── periodos.js     # Gestion de periodos
-│   ├── cobros.js       # Registro y seguimiento de cobros
-│   └── reportes.js     # Reportes generales
-└── doc.py              # Generacion opcional de un informe Word
+│   ├── app.js
+│   ├── db.js
+│   ├── docentes.js
+│   ├── periodos.js
+│   ├── cobros.js
+│   └── reportes.js
+├── doc.py
+├── README.md
+└── LICENSE
 ```
 
-## Tecnologias
+## Tecnologías
 
 - HTML5
 - CSS3
-- JavaScript vanilla
-- `localStorage`
-- Quill 1.3.6 mediante CDN
-- Python y `python-docx` para el script opcional `doc.py`
+- JavaScript
+- LocalStorage
+- Google Drive API
+- Quill
+- jsPDF
+- SheetJS
+- Python (opcional para `doc.py`)
 
-## Desarrollo
+## Datos y respaldo
 
-El proyecto no utiliza un proceso de compilacion. Los cambios en HTML, CSS o JavaScript pueden probarse recargando la pagina en el navegador.
+La información principal se guarda en el navegador mediante `localStorage`.
 
-Antes de publicar cambios, verifica que:
+Para proteger la información:
 
-- La aplicacion se abre correctamente.
-- Se pueden crear docentes y periodos.
-- Los cobros se guardan y aparecen en los reportes.
-- La exportacion e importacion de respaldos funciona correctamente.
+- Exporta respaldos periódicamente en formato JSON.
+- Guarda los archivos en una ubicación segura.
+- Restaura la base de datos cuando sea necesario.
+
+## Contribución
+
+Las contribuciones son bienvenidas. Si deseas mejorar la aplicación, puedes hacer un fork del repositorio y enviar un pull request.
 
 ## Autor
 
-Jose Manuel Cortez Concha
+José Manuel Cortez Concha
+
+## Licencia
+
+Este proyecto está disponible bajo una licencia abierta para uso educativo y personal. Si necesitas un tipo de licencia específica, puede ajustarse según el caso.
