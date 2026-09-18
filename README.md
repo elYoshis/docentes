@@ -1,6 +1,95 @@
 # SisCobro
 
-Sistema para la gestión de docentes, periodos académicos y cobros de la Universidad Privada Domingo Savio.
+Aplicación Flask para administrar docentes, periodos académicos y cobros de la Universidad Privada Domingo Savio. La interfaz usa HTML/Jinja, Tailwind CSS y JavaScript modular; la persistencia usa MySQL mediante SQLAlchemy.
+
+## Árbol del proyecto
+
+```text
+docentes/
+|-- app/
+|   |-- __init__.py              # Fábrica Flask y registro de extensiones
+|   |-- extensions.py            # Instancia compartida de SQLAlchemy
+|   |-- models.py                # Docente, Periodo y Cobro
+|   |-- routes/
+|   |   |-- __init__.py
+|   |   |-- api.py               # API JSON para el frontend
+|   |   `-- web.py               # Rutas de páginas HTML
+|   |-- templates/
+|   |   `-- index.html            # Shell principal Jinja + Tailwind
+|   `-- static/
+|       |-- css/app.css           # Componentes visuales propios
+|       `-- js/app.js             # Estado, fetch, render y eventos
+|-- config.py                    # Variables de entorno y URL MySQL
+|-- run.py                       # Punto de entrada del servidor
+|-- requirements.txt             # Dependencias Python
+|-- .env.example                 # Plantilla de configuración local
+|-- docker-compose.yml           # MySQL 8.4 para desarrollo
+`-- README.md
+```
+
+## Instalación local
+
+1. Crear y activar un entorno virtual:
+
+	```powershell
+	py -m venv .venv
+	.\.venv\Scripts\Activate.ps1
+	pip install -r requirements.txt
+	```
+
+2. Levantar MySQL con Docker Desktop:
+
+	```powershell
+	docker compose up -d mysql
+	```
+
+3. Copiar `.env.example` a `.env`. Para el `docker-compose` incluido, usar:
+
+	```env
+	DATABASE_URL=mysql+pymysql://siscobro:siscobro@localhost:3306/siscobro
+	SECRET_KEY=una-clave-local
+	```
+
+4. Ejecutar Flask:
+
+	```powershell
+	python run.py
+	```
+
+Abrir http://127.0.0.1:5000.
+
+## Google Drive
+
+Para activar la carga de hojas de ruta, crear un OAuth Client ID de tipo **Web application** en Google Cloud, habilitar Google Drive API y registrar `http://127.0.0.1:5000` como origen autorizado. Copiar el Client ID en `.env`:
+
+```env
+GOOGLE_CLIENT_ID=tu-client-id.apps.googleusercontent.com
+```
+
+Al guardar un cobro, selecciona una imagen o PDF. Flask crea las carpetas `SisCobro/<DOCENTE>` en Drive, sube el archivo y almacena el enlace en MySQL.
+
+## Migrar un respaldo JSON
+
+El respaldo original se conserva en `db_antiguo.json`. Para importarlo en la base configurada:
+
+```powershell
+python scripts\migrar_json_mysql.py
+```
+
+El importador crea las tablas, conserva los IDs heredados como `BIGINT`, respeta el periodo activo y ejecuta la operación dentro de una transacción. En este respaldo se importaron 126 docentes, 9 periodos y 411 cobros; un cobro se omitió porque apuntaba al docente inexistente `1770831662536`.
+
+## API principal
+
+| Método | Ruta | Uso |
+|---|---|---|
+| GET | `/api/estado` | Carga el estado completo de la aplicación |
+| POST/PUT/DELETE | `/api/docentes` | Gestiona docentes |
+| POST/DELETE | `/api/periodos` | Crea o elimina periodos |
+| PUT | `/api/periodos/<id>/activar` | Cambia el periodo activo |
+| POST | `/api/cobros` | Crea o actualiza un cobro |
+| PUT | `/api/cobros/<id>/estado` | Aprueba o marca como pagado |
+
+La base se crea automáticamente con `db.create_all()` al arrancar. Para producción conviene sustituirlo por migraciones Alembic/Flask-Migrate.
 
 SisCobro es una aplicación web ligera para controlar pagos, consultar el estado de cada periodo y generar reportes de cobros sin depender de un servidor externo.
 
