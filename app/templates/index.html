@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SisCobro | Gestión docente</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css">
+  <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { ink: '#17212b', coral: '#e9694a', mint: '#d9f3e8' } } } };
+  </script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body class="min-h-screen bg-[#f5f1eb] text-ink">
+  <header class="border-b border-black/10 bg-ink text-white">
+    <div class="mx-auto flex max-w-[1500px] flex-wrap items-center gap-5 px-5 py-4 lg:px-8">
+      <a href="/" class="mr-auto text-xl font-black tracking-tight">Sis<span class="text-[#f39a7b]">Cobro</span></a>
+      <nav id="tabs" class="flex flex-wrap gap-1 text-sm font-semibold">
+        <button data-tab="cobros" class="tab-button active">Planilla</button>
+        <button data-tab="docentes" class="tab-button">Docentes</button>
+        <button data-tab="periodos" class="tab-button">Periodos</button>
+        <button data-tab="reportes" class="tab-button">Reportes</button>
+        <button data-tab="configuracion" class="tab-button">Configuración</button>
+      </nav>
+      <label class="flex items-center gap-2 text-sm">Periodo
+        <select id="periodo-nav" class="rounded border border-white/20 bg-white/10 px-2 py-1 text-white outline-none"></select>
+      </label>
+      <button id="btn-theme" class="theme-button" title="Cambiar tema" aria-label="Cambiar tema">☾</button>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-[1500px] px-5 py-8 lg:px-8">
+    <section id="tab-cobros" class="tab-panel">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+        <div><p class="eyebrow">Operación mensual</p><h1 class="page-title">Planilla de cobros</h1></div>
+        <div class="flex gap-2"><button id="btn-cargar-docentes" class="button button-dark">Cargar docentes</button><button id="btn-nuevo-cobro" class="button button-coral">Registrar cobro</button></div>
+      </div>
+      <div class="panel mb-6"><div class="mb-3 flex items-center justify-between"><h2 class="section-title">Nota general del periodo</h2><button id="guardar-nota" class="button button-dark">Guardar nota</button></div><div id="editor-nota-general" class="rich-editor" aria-label="Nota general del periodo"></div></div>
+      <div class="mb-6 grid gap-4 md:grid-cols-2">
+        <article class="metric-card border-l-4 border-coral"><p class="eyebrow">Atrasos recaudados</p><strong id="metric-atraso">Bs. 0.00</strong><div class="meter"><span id="bar-atraso"></span></div><small id="meta-atraso">Meta: Bs. 0.00</small></article>
+        <article class="metric-card border-l-4 border-emerald-500"><p class="eyebrow">Actividades recaudadas</p><strong id="metric-actividad">Bs. 0.00</strong><div class="meter mint"><span id="bar-actividad"></span></div><small id="meta-actividad">Meta: Bs. 0.00</small></article>
+      </div>
+      <div id="sin-periodo" class="hidden rounded-lg border border-[#e7b778] bg-[#fff4d9] p-4 text-[#805b20]">Crea o selecciona un periodo activo para trabajar.</div>
+      <div id="panel-cobros" class="space-y-4">
+        <div class="panel grid gap-3 sm:grid-cols-2 lg:grid-cols-4"><input id="buscar-cobros" class="field lg:col-span-2" placeholder="Buscar docente u observación"><select id="filtro-multa" class="field"><option value="">Tipo de multa: todas</option><option value="atraso">Con atraso</option><option value="actividad">Con actividad</option><option value="ambas">Atraso y actividad</option><option value="ninguna">Sin multa</option></select><select id="filtro-estado" class="field"><option value="">Aprobación: todas</option><option value="aprobado">Aprobados</option><option value="pendiente">Pendientes</option></select><select id="filtro-pago" class="field"><option value="">Pago: todos</option><option value="pagado">Pagados</option><option value="pendiente">No pagados</option></select><select id="filtro-ruta" class="field"><option value="">Hoja de ruta: todas</option><option value="entregada">Entregadas</option><option value="pendiente">Pendientes</option></select><input id="filtro-minimo" class="field" type="number" min="0" step="0.01" placeholder="Total mínimo"><input id="filtro-maximo" class="field" type="number" min="0" step="0.01" placeholder="Total máximo"><button id="limpiar-filtros-cobros" class="button button-light">Limpiar filtros</button></div>
+        <div class="panel overflow-x-auto"><table class="data-table"><thead><tr><th>Nro</th><th data-sort="paterno">Apellido paterno ↕</th><th data-sort="materno">Apellido materno ↕</th><th data-sort="nombre">Nombres ↕</th><th data-sort="hoja_ruta">Hoja de ruta ↕</th><th data-sort="atraso">Atraso ↕</th><th data-sort="actividad">Actividad ↕</th><th data-sort="total">Total ↕</th><th><label class="flex items-center gap-2"><input id="aprobar-todos" type="checkbox"> Aprobado</label></th><th data-sort="cancelado">Pago ↕</th><th>Observación</th></tr></thead><tbody id="tabla-cobros"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="tab-docentes" class="tab-panel hidden">
+      <div class="mb-6"><p class="eyebrow">Directorio</p><h1 class="page-title">Docentes</h1></div>
+      <form id="form-docente" class="panel mb-5 grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]"><input name="nombre" class="field" placeholder="Nombre(s)" required><input name="paterno" class="field" placeholder="Apellido paterno" required><input name="materno" class="field" placeholder="Apellido materno"><button class="button button-coral">Agregar</button></form>
+      <div class="panel mb-5 flex flex-wrap gap-3"><input id="buscar-docentes" class="field flex-1" placeholder="Buscar por nombre o apellido"><button id="limpiar-filtros-docentes" class="button button-light">Limpiar</button></div><div class="panel overflow-x-auto"><table class="data-table"><thead><tr><th data-sort-docente="nombre_completo">Nombre completo ↕</th><th data-sort-docente="nombre">Nombre ↕</th><th data-sort-docente="paterno">Apellido paterno ↕</th><th data-sort-docente="materno">Apellido materno ↕</th><th></th></tr></thead><tbody id="tabla-docentes"></tbody></table></div>
+    </section>
+
+    <section id="tab-periodos" class="tab-panel hidden">
+      <div class="mb-6"><p class="eyebrow">Calendario financiero</p><h1 class="page-title">Periodos</h1></div>
+      <form id="form-periodo" class="panel mb-5 grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto]"><input name="fecha" type="month" class="field" required><input name="meta_atraso" type="number" min="0" step="0.01" class="field" placeholder="Meta atrasos"><input name="meta_actividad" type="number" min="0" step="0.01" class="field" placeholder="Meta actividades"><button class="button button-coral">Crear periodo</button></form>
+      <div class="panel mb-5 flex flex-wrap gap-3"><input id="buscar-periodos" class="field flex-1" placeholder="Buscar periodo"><select id="filtro-periodo-estado" class="field w-auto"><option value="">Todos los estados</option><option value="activo">Activo</option><option value="inactivo">Inactivos</option></select><button id="limpiar-filtros-periodos" class="button button-light">Limpiar</button></div><div class="panel overflow-x-auto"><table class="data-table"><thead><tr><th data-sort-periodo="fecha">Periodo ↕</th><th data-sort-periodo="meta_atraso">Meta atraso ↕</th><th data-sort-periodo="meta_actividad">Meta actividad ↕</th><th>Estado</th><th></th></tr></thead><tbody id="tabla-periodos"></tbody></table></div>
+    </section>
+
+    <section id="tab-reportes" class="tab-panel hidden">
+      <div class="mb-6 flex flex-wrap items-end justify-between gap-4"><div><p class="eyebrow">Lectura ejecutiva</p><h1 class="page-title">Reporte del periodo</h1></div><div class="flex gap-2"><button id="exportar-excel" class="button button-success">Exportar Excel</button><button id="exportar-pdf" class="button button-danger">Exportar PDF</button></div></div>
+      <div id="reporte-resumen" class="grid gap-4 md:grid-cols-3"></div>
+      <div class="panel mt-5"><div class="mb-4 flex flex-wrap gap-3"><input id="buscar-reporte" class="field flex-1" placeholder="Buscar docente"><select id="filtro-reporte-multa" class="field w-auto"><option value="">Todas las multas</option><option value="atraso">Con atraso</option><option value="actividad">Con actividad</option></select></div><div class="overflow-x-auto"><table class="data-table"><thead><tr><th data-sort-reporte="docente">Docente ↕</th><th data-sort-reporte="atraso">Atraso ↕</th><th data-sort-reporte="actividad">Actividad ↕</th><th data-sort-reporte="total">Total deuda ↕</th><th>Estado</th></tr></thead><tbody id="tabla-pendientes"></tbody></table></div></div>
+    </section>
+
+    <section id="tab-configuracion" class="tab-panel hidden">
+      <div class="mb-6"><p class="eyebrow">Seguridad y preferencias</p><h1 class="page-title">Configuración</h1></div>
+      <div class="grid gap-4 md:grid-cols-2">
+        <article class="panel"><h2 class="section-title mb-2">Tema visual</h2><p class="mb-4 text-sm opacity-70">La preferencia se guarda en este navegador.</p><button id="btn-theme-config" class="button button-dark">Cambiar tema</button></article>
+        <article class="panel"><h2 class="section-title mb-2">Base de datos</h2><p class="mb-4 text-sm opacity-70">Descarga un respaldo o restaura un archivo JSON compatible.</p><div class="flex flex-wrap gap-2"><button id="btn-exportar" class="button button-dark">Exportar respaldo</button><label class="button button-light cursor-pointer">Importar respaldo<input id="input-importar" type="file" accept="application/json,.json" class="hidden"></label></div></article>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal-cobro" class="modal-card"><form id="form-cobro" method="dialog" class="space-y-4"><div class="flex items-center justify-between"><h2 class="section-title">Registrar movimiento</h2><button type="button" data-close class="text-2xl text-black/50">&times;</button></div><select name="docente_id" id="cobro-docente" class="field" required></select><div class="grid gap-3 sm:grid-cols-2"><input name="atraso" type="number" min="0" step="0.01" class="field" placeholder="Multa atraso"><input name="actividad" type="number" min="0" step="0.01" class="field" placeholder="Multa actividad"></div><label class="flex items-center gap-2 text-sm"><input name="hoja_ruta" type="checkbox"> Hoja de ruta entregada</label><label class="field block cursor-pointer">Subir hoja de ruta a Google Drive<input name="archivo" id="input-hoja-ruta" type="file" accept="image/*,application/pdf" class="mt-2 block w-full text-sm"></label><textarea name="observacion" class="field" placeholder="Observaciones"></textarea><div class="flex justify-end gap-2"><button type="button" data-close class="button button-light">Cancelar</button><button class="button button-coral">Guardar</button></div></form></dialog>
+  <dialog id="modal-masivo" class="modal-card"><form id="form-masivo" method="dialog" class="space-y-4"><h2 class="section-title">Cargar docentes al periodo</h2><div id="lista-masiva" class="max-h-72 space-y-2 overflow-y-auto"></div><div class="flex justify-end gap-2"><button type="button" data-close class="button button-light">Cancelar</button><button class="button button-coral">Cargar seleccionados</button></div></form></dialog>
+  <dialog id="modal-historial" class="modal-card"><div class="space-y-4"><div class="flex items-center justify-between"><h2 class="section-title">Historial de pagos</h2><button type="button" data-close class="text-2xl text-black/50">&times;</button></div><p id="historial-docente" class="font-bold"></p><div id="historial-resumen" class="grid grid-cols-3 gap-2 text-center"></div><div class="overflow-x-auto"><table class="data-table"><thead><tr><th>Periodo</th><th>Atraso</th><th>Actividad</th><th>Total</th><th>Estado</th></tr></thead><tbody id="tabla-historial"></tbody></table></div></div></dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script>window.GOOGLE_CLIENT_ID = {{ google_client_id|tojson }};</script>
+  <script src="{{ url_for('static', filename='js/app.js', v='20260918-10') }}"></script>
+</body>
+</html>

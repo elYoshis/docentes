@@ -1,0 +1,4959 @@
+{
+  "docentes": [
+    {
+      "id": 1776434019164,
+      "nombre": "martin lucio",
+      "paterno": "acha",
+      "materno": "muñoz"
+    },
+    {
+      "id": 1789070209410,
+      "nombre": "LAURA MONSERRAT",
+      "paterno": "AGUILAR",
+      "materno": "AUZA"
+    },
+    {
+      "id": 1769545802838,
+      "nombre": "jesus rene",
+      "paterno": "aguirre",
+      "materno": "romero"
+    },
+    {
+      "id": 1769544429302,
+      "nombre": "gladiz lorena",
+      "paterno": "alvarado",
+      "materno": "manuel"
+    },
+    {
+      "id": 1774278697564,
+      "nombre": "JUDITH",
+      "paterno": "AMURRIO",
+      "materno": "SOLIZ"
+    },
+    {
+      "id": 1789070129264,
+      "nombre": "DIANA CECILIA",
+      "paterno": "ANCASI",
+      "materno": "CALIZAYA"
+    },
+    {
+      "id": 1776434064554,
+      "nombre": "ramon omar",
+      "paterno": "aramayo",
+      "materno": "vaca cortez"
+    },
+    {
+      "id": 1774276005972,
+      "nombre": "Miguel angel",
+      "paterno": "avendaño",
+      "materno": "leon"
+    },
+    {
+      "id": 1774276053698,
+      "nombre": "MARIA DE LOS ANGELES",
+      "paterno": "AVILA",
+      "materno": "ANDIA"
+    },
+    {
+      "id": 1769544446102,
+      "nombre": "heriberto",
+      "paterno": "aviza",
+      "materno": "yucra"
+    },
+    {
+      "id": 1770831447058,
+      "nombre": "ruben",
+      "paterno": "ayala",
+      "materno": "veizaga"
+    },
+    {
+      "id": 1783949475554,
+      "nombre": "martin gustavo",
+      "paterno": "balladares",
+      "materno": "rocha"
+    },
+    {
+      "id": 1786470545613,
+      "nombre": "melvin gustavo",
+      "paterno": "balladares",
+      "materno": "rocha"
+    },
+    {
+      "id": 1774278967695,
+      "nombre": "JUAN CARLOS",
+      "paterno": "BLACUTT",
+      "materno": "YUCRA"
+    },
+    {
+      "id": 1770831499924,
+      "nombre": "ronald hugo",
+      "paterno": "blanco",
+      "materno": "aguilar"
+    },
+    {
+      "id": 1783949578233,
+      "nombre": "miguel freddy",
+      "paterno": "botello",
+      "materno": "quispe"
+    },
+    {
+      "id": 1774279013741,
+      "nombre": "PAOLA ANDREA",
+      "paterno": "BUENO",
+      "materno": "JANCO"
+    },
+    {
+      "id": 1789070110463,
+      "nombre": "CARLA MARCELA",
+      "paterno": "CABALLERO",
+      "materno": "VARGAS"
+    },
+    {
+      "id": 1776434097595,
+      "nombre": "EDDY HERNAN",
+      "paterno": "CACEReS",
+      "materno": "RIOS"
+    },
+    {
+      "id": 1774279024989,
+      "nombre": "GABRIELA ROSSY",
+      "paterno": "CAIRO",
+      "materno": "QUINO"
+    },
+    {
+      "id": 1774272428050,
+      "nombre": "caracila",
+      "paterno": "calizaya",
+      "materno": "gustavo"
+    },
+    {
+      "id": 1783949769575,
+      "nombre": "veronica alejandra",
+      "paterno": "calizaya",
+      "materno": "colque"
+    },
+    {
+      "id": 1774279041853,
+      "nombre": "LILIANA KARINA",
+      "paterno": "CALLEJAS",
+      "materno": "TORRICO"
+    },
+    {
+      "id": 1770831645366,
+      "nombre": "gustavo",
+      "paterno": "caracila",
+      "materno": "calizaya"
+    },
+    {
+      "id": 1769545788770,
+      "nombre": "ivan marcelo",
+      "paterno": "careaga",
+      "materno": "veizaga"
+    },
+    {
+      "id": 1774279068110,
+      "nombre": "ROBERTO REYNALDO",
+      "paterno": "CASTELLON",
+      "materno": "SEJAS"
+    },
+    {
+      "id": 1770831407681,
+      "nombre": "marilin",
+      "paterno": "chambi",
+      "materno": "ocampo"
+    },
+    {
+      "id": 1786470489436,
+      "nombre": "lourdes",
+      "paterno": "chavez",
+      "materno": "guzman"
+    },
+    {
+      "id": 1781705568435,
+      "nombre": "behimar",
+      "paterno": "chiri",
+      "materno": "munzon"
+    },
+    {
+      "id": 1770831730440,
+      "nombre": "mabel",
+      "paterno": "choque",
+      "materno": "salgado"
+    },
+    {
+      "id": 1774279961293,
+      "nombre": "martin alberto",
+      "paterno": "choque",
+      "materno": "gutierrez"
+    },
+    {
+      "id": 1770831568485,
+      "nombre": "paul",
+      "paterno": "choque",
+      "materno": "gonzales"
+    },
+    {
+      "id": 1769542748908,
+      "nombre": "claudia",
+      "paterno": "coca",
+      "materno": "ayala"
+    },
+    {
+      "id": 1769543686142,
+      "nombre": "elmer adalid",
+      "paterno": "condori",
+      "materno": "magne"
+    },
+    {
+      "id": 1769542780335,
+      "nombre": "daniel rolando",
+      "paterno": "copa",
+      "materno": "roque"
+    },
+    {
+      "id": 1780062710859,
+      "nombre": "kevin jonathan",
+      "paterno": "copa",
+      "materno": "ricaldi"
+    },
+    {
+      "id": 1774280036764,
+      "nombre": "francisca",
+      "paterno": "cordoba",
+      "materno": "paco"
+    },
+    {
+      "id": 1770831517096,
+      "nombre": "patricia daisy",
+      "paterno": "cortez",
+      "materno": "zelaya"
+    },
+    {
+      "id": 1774280052732,
+      "nombre": "rosa betzabe",
+      "paterno": "cortez",
+      "materno": "cordova"
+    },
+    {
+      "id": 1789070169985,
+      "nombre": "JUAN MANUEL",
+      "paterno": "CUELLAR",
+      "materno": "CARPIO"
+    },
+    {
+      "id": 1774280278945,
+      "nombre": "nayda jhovana",
+      "paterno": "cuizara",
+      "materno": "atanacio"
+    },
+    {
+      "id": 1776434152105,
+      "nombre": "lisbeth magaly",
+      "paterno": "escobar",
+      "materno": "mamani"
+    },
+    {
+      "id": 1770831455315,
+      "nombre": "paola evelyn",
+      "paterno": "espinoza",
+      "materno": "diaz"
+    },
+    {
+      "id": 1769542762157,
+      "nombre": "coraly eliana",
+      "paterno": "fernandez",
+      "materno": "rocha"
+    },
+    {
+      "id": 1774280466655,
+      "nombre": "noelia yashira",
+      "paterno": "fernandez",
+      "materno": "nogales"
+    },
+    {
+      "id": 1780062790363,
+      "nombre": "christopher paul",
+      "paterno": "fleischmann",
+      "materno": "fleischmann"
+    },
+    {
+      "id": 1776434217993,
+      "nombre": "ambar",
+      "paterno": "flores",
+      "materno": "villca"
+    },
+    {
+      "id": 1776434201737,
+      "nombre": "claudia lucia",
+      "paterno": "flores",
+      "materno": "calizaya"
+    },
+    {
+      "id": 1781707792250,
+      "nombre": "maria teresa",
+      "paterno": "flores",
+      "materno": "soria"
+    },
+    {
+      "id": 1781705521394,
+      "nombre": "ana gabriela",
+      "paterno": "fortun",
+      "materno": "duran"
+    },
+    {
+      "id": 1776434231879,
+      "nombre": "alizon marcela",
+      "paterno": "frias",
+      "materno": "medrano"
+    },
+    {
+      "id": 1770831415252,
+      "nombre": "joel",
+      "paterno": "frias",
+      "materno": "monduela"
+    },
+    {
+      "id": 1769542440562,
+      "nombre": "avimael nayter",
+      "paterno": "fuentes",
+      "materno": "guzman"
+    },
+    {
+      "id": 1783949631870,
+      "nombre": "omar",
+      "paterno": "fulguera",
+      "materno": "gonzales"
+    },
+    {
+      "id": 1783949260974,
+      "nombre": "alex ronald",
+      "paterno": "gil",
+      "materno": "abasto"
+    },
+    {
+      "id": 1770831590761,
+      "nombre": "jose justo",
+      "paterno": "godoy",
+      "materno": "quispe"
+    },
+    {
+      "id": 1780062972851,
+      "nombre": "angel miguel",
+      "paterno": "gonzales",
+      "materno": "soria"
+    },
+    {
+      "id": 1774280490786,
+      "nombre": "claudia",
+      "paterno": "gonzales",
+      "materno": "andrade"
+    },
+    {
+      "id": 1769544416887,
+      "nombre": "gabriela",
+      "paterno": "guerrero",
+      "materno": "urquizu"
+    },
+    {
+      "id": 1769542791536,
+      "nombre": "edson roberto",
+      "paterno": "gutierrez",
+      "materno": "flores"
+    },
+    {
+      "id": 1770831287393,
+      "nombre": "judith zayda",
+      "paterno": "gutierrez",
+      "materno": "leon"
+    },
+    {
+      "id": 1780063004952,
+      "nombre": "shirley lenny",
+      "paterno": "gutierrez",
+      "materno": "carpio"
+    },
+    {
+      "id": 1781707968790,
+      "nombre": "telma imelda",
+      "paterno": "gutierrez",
+      "materno": "fernandez"
+    },
+    {
+      "id": 1774280522179,
+      "nombre": "pamela",
+      "paterno": "herbas",
+      "materno": "quispe"
+    },
+    {
+      "id": 1770831744202,
+      "nombre": "franz reynaldo",
+      "paterno": "huanaco",
+      "materno": "alave"
+    },
+    {
+      "id": 1786470250928,
+      "nombre": "delfor raul",
+      "paterno": "huaylla",
+      "materno": "caceres"
+    },
+    {
+      "id": 1770831764125,
+      "nombre": "carlos mauricio",
+      "paterno": "jemio",
+      "materno": "martinez"
+    },
+    {
+      "id": 1781707882624,
+      "nombre": "rene victor",
+      "paterno": "jimenez",
+      "materno": "pastor"
+    },
+    {
+      "id": 1769544388838,
+      "nombre": "frecia lupe",
+      "paterno": "lagrava",
+      "materno": "flores"
+    },
+    {
+      "id": 1774280571221,
+      "nombre": "ALVARO rodrigo",
+      "paterno": "lara",
+      "materno": "VALDIVIA"
+    },
+    {
+      "id": 1770831686411,
+      "nombre": "franz",
+      "paterno": "lima",
+      "materno": "nina"
+    },
+    {
+      "id": 1774280689337,
+      "nombre": "maria fabiola",
+      "paterno": "lira",
+      "materno": "salinas"
+    },
+    {
+      "id": 1783949249948,
+      "nombre": "adalid",
+      "paterno": "lopez",
+      "materno": "gonzales"
+    },
+    {
+      "id": 1781706301193,
+      "nombre": "cristhiam rene",
+      "paterno": "lopez",
+      "materno": "rios"
+    },
+    {
+      "id": 1770831438995,
+      "nombre": "limbert jimmy",
+      "paterno": "loredo",
+      "materno": "berbetty"
+    },
+    {
+      "id": 1774280864618,
+      "nombre": "raul rolando",
+      "paterno": "magne",
+      "materno": "poma"
+    },
+    {
+      "id": 1774280710427,
+      "nombre": "viviana",
+      "paterno": "magne",
+      "materno": "nava"
+    },
+    {
+      "id": 1774280877068,
+      "nombre": "juan carlos",
+      "paterno": "maldonado",
+      "materno": "rocha"
+    },
+    {
+      "id": 1780064575901,
+      "nombre": "roly saul",
+      "paterno": "mamani",
+      "materno": "mamani"
+    },
+    {
+      "id": 1789070186111,
+      "nombre": "KURMY CIDAR",
+      "paterno": "MARCA",
+      "materno": "PINAYA"
+    },
+    {
+      "id": 1769534812095,
+      "nombre": "ariel alber",
+      "paterno": "martinez",
+      "materno": "chumacero"
+    },
+    {
+      "id": 1770831426403,
+      "nombre": "vianka laura",
+      "paterno": "montaño",
+      "materno": "mamani"
+    },
+    {
+      "id": 1781706448810,
+      "nombre": "jose ricardo",
+      "paterno": "morales",
+      "materno": "alarcon"
+    },
+    {
+      "id": 1770831680663,
+      "nombre": "gustavo pablo",
+      "paterno": "moya",
+      "materno": "atahuichi"
+    },
+    {
+      "id": 1781707582677,
+      "nombre": "luis jorge",
+      "paterno": "nava",
+      "materno": "ramirez"
+    },
+    {
+      "id": 1770831276256,
+      "nombre": "roxana",
+      "paterno": "nieto",
+      "materno": ""
+    },
+    {
+      "id": 1770831714379,
+      "nombre": "isaac rogelio",
+      "paterno": "nuñez",
+      "materno": "lopez"
+    },
+    {
+      "id": 1770831545096,
+      "nombre": "katterin pamela",
+      "paterno": "nuñez",
+      "materno": "choque"
+    },
+    {
+      "id": 1781707924913,
+      "nombre": "roxana aide",
+      "paterno": "ortiz",
+      "materno": "lopez"
+    },
+    {
+      "id": 1776434332983,
+      "nombre": "harvey freddy",
+      "paterno": "perez",
+      "materno": "mendieta"
+    },
+    {
+      "id": 1774280919371,
+      "nombre": "IRENE JUDiTH",
+      "paterno": "PEREZ",
+      "materno": "CHOQUE"
+    },
+    {
+      "id": 1770831305967,
+      "nombre": "rodrigo",
+      "paterno": "pinto",
+      "materno": "andrade"
+    },
+    {
+      "id": 1789070219507,
+      "nombre": "ROSARIO NOEMI",
+      "paterno": "PITA",
+      "materno": "ROMERO"
+    },
+    {
+      "id": 1780064618029,
+      "nombre": "yesika",
+      "paterno": "poma",
+      "materno": "cahuana"
+    },
+    {
+      "id": 1770831297922,
+      "nombre": "humberto",
+      "paterno": "quispe",
+      "materno": "fuentes"
+    },
+    {
+      "id": 1770831655800,
+      "nombre": "maribel",
+      "paterno": "quispe",
+      "materno": "chambi"
+    },
+    {
+      "id": 1769545779601,
+      "nombre": "humberto",
+      "paterno": "qusipe",
+      "materno": "fuentes"
+    },
+    {
+      "id": 1776434394230,
+      "nombre": "jeanneth robertha",
+      "paterno": "ramirez",
+      "materno": "cespedes"
+    },
+    {
+      "id": 1789070196738,
+      "nombre": "LAURA AIME",
+      "paterno": "RAMOS",
+      "materno": "QUINTEROS"
+    },
+    {
+      "id": 1770831722717,
+      "nombre": "raul fernando",
+      "paterno": "rocha",
+      "materno": "ayala"
+    },
+    {
+      "id": 1770831557076,
+      "nombre": "soledad liz",
+      "paterno": "rodriguez",
+      "materno": "equiza"
+    },
+    {
+      "id": 1774280936108,
+      "nombre": "mario",
+      "paterno": "romero",
+      "materno": "castillo"
+    },
+    {
+      "id": 1783949300702,
+      "nombre": "angelica mavel",
+      "paterno": "rueda",
+      "materno": "ocaña"
+    },
+    {
+      "id": 1774280957628,
+      "nombre": "juan carlos",
+      "paterno": "salazar",
+      "materno": "guerrero"
+    },
+    {
+      "id": 1770831695495,
+      "nombre": "juan gabriel",
+      "paterno": "salazar",
+      "materno": "guerrero"
+    },
+    {
+      "id": 1769542738460,
+      "nombre": "beymar eduardo",
+      "paterno": "salinas",
+      "materno": "lujan"
+    },
+    {
+      "id": 1776434444215,
+      "nombre": "alison elvia",
+      "paterno": "sanchez",
+      "materno": "peñafiel"
+    },
+    {
+      "id": 1780064678669,
+      "nombre": "jhohans arturo",
+      "paterno": "sandoval",
+      "materno": "terceros"
+    },
+    {
+      "id": 1774281295728,
+      "nombre": "brenda jhoseline",
+      "paterno": "segovia",
+      "materno": "calizaya"
+    },
+    {
+      "id": 1770831396257,
+      "nombre": "patricia ximena",
+      "paterno": "segura",
+      "materno": "quispe"
+    },
+    {
+      "id": 1770831487972,
+      "nombre": "KATHERINE DANIELA",
+      "paterno": "SERRANO",
+      "materno": "MEJIA"
+    },
+    {
+      "id": 1770831635559,
+      "nombre": "lizeth carla",
+      "paterno": "sunavi",
+      "materno": "morejon"
+    },
+    {
+      "id": 1786470175999,
+      "nombre": "alison veronica",
+      "paterno": "tangara",
+      "materno": "calle"
+    },
+    {
+      "id": 1781707854046,
+      "nombre": "neydi",
+      "paterno": "taraña",
+      "materno": "avila"
+    },
+    {
+      "id": 1786470602734,
+      "nombre": "paul rodrigo",
+      "paterno": "teran",
+      "materno": "calcina"
+    },
+    {
+      "id": 1769534539566,
+      "nombre": "anthony junior",
+      "paterno": "terrazas",
+      "materno": "rivas"
+    },
+    {
+      "id": 1776434477926,
+      "nombre": "martin carlos",
+      "paterno": "tirado",
+      "materno": "MENDOZA"
+    },
+    {
+      "id": 1770831465187,
+      "nombre": "valeria",
+      "paterno": "torrez",
+      "materno": "ledezma"
+    },
+    {
+      "id": 1774281323972,
+      "nombre": "kasandra julie",
+      "paterno": "vargas",
+      "materno": "rocha"
+    },
+    {
+      "id": 1780076681015,
+      "nombre": "shayla tatiana",
+      "paterno": "vasquez",
+      "materno": "quispe"
+    },
+    {
+      "id": 1780077397252,
+      "nombre": "eduardo andres",
+      "paterno": "veneros",
+      "materno": "ayllon"
+    },
+    {
+      "id": 1774281611780,
+      "nombre": "jimmy roberto",
+      "paterno": "vidaurre",
+      "materno": "romero"
+    },
+    {
+      "id": 1774282898799,
+      "nombre": "silvio richard",
+      "paterno": "yucra",
+      "materno": "ochoa"
+    },
+    {
+      "id": 1774282917808,
+      "nombre": "monica francy",
+      "paterno": "zabala",
+      "materno": "usnayo"
+    },
+    {
+      "id": 1769544516197,
+      "nombre": "hernan vladimir",
+      "paterno": "zaconeta",
+      "materno": "colque"
+    },
+    {
+      "id": 1770831600551,
+      "nombre": "ximena mariel",
+      "paterno": "zeballos",
+      "materno": "vasquez"
+    }
+  ],
+  "periodos": [
+    {
+      "id": 1769534523524,
+      "fecha": "2025-12",
+      "metaAtraso": 1030,
+      "metaActividad": 1700
+    },
+    {
+      "id": 1770831258716,
+      "fecha": "2026-01",
+      "metaAtraso": 1800,
+      "metaActividad": 0
+    },
+    {
+      "id": 1774272164184,
+      "fecha": "2026-02",
+      "metaAtraso": 868,
+      "metaActividad": 250
+    },
+    {
+      "id": 1776433941818,
+      "fecha": "2026-03",
+      "metaAtraso": 1030,
+      "metaActividad": 750
+    },
+    {
+      "id": 1780060007431,
+      "fecha": "2026-04",
+      "metaAtraso": 1392,
+      "metaActividad": 0
+    },
+    {
+      "id": 1781705468632,
+      "fecha": "2026-05",
+      "metaAtraso": 2058,
+      "metaActividad": 0
+    },
+    {
+      "id": 1783949224369,
+      "fecha": "2026-06",
+      "metaAtraso": 1680,
+      "metaActividad": 250,
+      "notas": "- Docente de medicina ANDRES HERRERA AVILA dejo 840bs de multa, pero no hoja de ruta 21/07/2026\n- Actualización: AVILA dejo hoja de ruta\n---27/07/2026 se hace entrega de 8850bs de multas de retraso de medicina y fisioterapia. (Monto Completo)\n---27/07/2026 se hace entrega de 250bs en actividad de choque chaparro del mes de marzo del 2025 \n---27/07/2026 se hace entrega de 780bs, correspondiente al mes de mayo del 2025, faltando 40bs \n---27/07/2026 se hace entrega de 1262bs retrasos y 250bs actividades, correspondiente al mes de junio del 2025, faltando 418bs en retraso\n"
+    },
+    {
+      "id": 1786470087831,
+      "fecha": "2026-07",
+      "metaAtraso": 1556,
+      "metaActividad": 500,
+      "notas": "-- 26/08/2026 se hace entrega de 1248bs en retrasos, faltando 308bs\n-- 26/08/2026 se hace entrega de 500bs en actividades, siendo el total \n-- 26/08/2026 se hace entrega de 418bs faltantes correspondientes al mes de junio 2026, cerrando el mes junio\n-- 27/08/2026 Salinas Lujan entrega hoja de ruta y paga 308bs\n-- 31/08/2026 Se hace entrega de 308bs, completando el total del mes de julio.",
+      "notaGeneral": "<p>-- 26/08/2026 se hace entrega de 1248bs en retrasos, faltando 308bs\n<span style=\"background-color: rgb(102, 185, 102);\">-- 26/08/2026 se hace entrega de 500bs en actividades, siendo el total </span>\n-- 26/08/2026 se hace entrega de 418bs faltantes correspondientes al mes de junio 2026, cerrando el mes junio\n-- 27/08/2026 Salinas Lujan entrega hoja de ruta y paga 308bs\n<span style=\"background-color: rgb(102, 185, 102);\">-- 31/08/2026 Se hace entrega de 308bs, completando el total del mes de julio.</span></p>"
+    },
+    {
+      "id": 1789069528603,
+      "fecha": "2026-08",
+      "metaAtraso": 584,
+      "metaActividad": 0
+    }
+  ],
+  "cobros": [
+    {
+      "periodoId": 1769534523524,
+      "docenteId": 1769542440562,
+      "hojaRuta": true,
+      "atraso": 100,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1769534523524,
+      "docenteId": 1769542738460,
+      "hojaRuta": true,
+      "atraso": 56,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831764125,
+      "hojaRuta": true,
+      "atraso": 16,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769542748908,
+      "hojaRuta": true,
+      "atraso": 6,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831695495,
+      "hojaRuta": true,
+      "atraso": 26,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831426403,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831590761,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831568485,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769544416887,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831655800,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831276256,
+      "hojaRuta": true,
+      "atraso": 48,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831635559,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831722717,
+      "hojaRuta": true,
+      "atraso": 228,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769542762157,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831662536,
+      "hojaRuta": true,
+      "atraso": 82,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831396257,
+      "hojaRuta": true,
+      "atraso": 14,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831499924,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831545096,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831297922,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769534812095,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831744202,
+      "hojaRuta": true,
+      "atraso": 34,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831305967,
+      "hojaRuta": true,
+      "atraso": 54,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831465187,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831407681,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831557076,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831645366,
+      "hojaRuta": true,
+      "atraso": 36,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831487972,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831438995,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831517096,
+      "hojaRuta": true,
+      "atraso": 4,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831455315,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831686411,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769542440562,
+      "hojaRuta": true,
+      "atraso": 314,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831714379,
+      "hojaRuta": true,
+      "atraso": 38,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831730440,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769545788770,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831680663,
+      "hojaRuta": true,
+      "atraso": 248,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831600551,
+      "hojaRuta": true,
+      "atraso": 250,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831415252,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831287393,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1770831447058,
+      "hojaRuta": true,
+      "atraso": 370,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769542738460,
+      "hojaRuta": true,
+      "atraso": 12,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774278697564,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774279013741,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774279068110,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831645366,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280466655,
+      "hojaRuta": true,
+      "atraso": 2,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280571221,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280689337,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831655800,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280936108,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280957628,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774281295728,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831635559,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774279961293,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280710427,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831744202,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774282917808,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831276256,
+      "hojaRuta": true,
+      "atraso": 2,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1769545802838,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831407681,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831438995,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774276005972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280864618,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831695495,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1769534539566,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774281323972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774281611780,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280036764,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280278945,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280522179,
+      "hojaRuta": true,
+      "atraso": 6,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831455315,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831499924,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774276053698,
+      "hojaRuta": true,
+      "atraso": 6,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1769544388838,
+      "hojaRuta": true,
+      "atraso": 40,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280919371,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831447058,
+      "hojaRuta": true,
+      "atraso": 190,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280877068,
+      "hojaRuta": true,
+      "atraso": 132,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280490786,
+      "hojaRuta": true,
+      "atraso": 4,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774282898799,
+      "hojaRuta": true,
+      "atraso": 44,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831714379,
+      "hojaRuta": true,
+      "atraso": 76,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1769542791536,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831730440,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1769544429302,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774278967695,
+      "hojaRuta": true,
+      "atraso": 22,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1769542738460,
+      "hojaRuta": true,
+      "atraso": 100,
+      "actividad": 250,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831686411,
+      "hojaRuta": true,
+      "atraso": 190,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1770831517096,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1769544516197,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1774272164184,
+      "docenteId": 1774280052732,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1770831258716,
+      "docenteId": 1769543686142,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831590761,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280571221,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280864618,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280936108,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774281611780,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831415252,
+      "hojaRuta": true,
+      "atraso": 74,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280466655,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769545788770,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769534812095,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831557076,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769544416887,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280689337,
+      "hojaRuta": true,
+      "atraso": 8,
+      "actividad": 250,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434394230,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434444215,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769544429302,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774279961293,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434217993,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774282917808,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831465187,
+      "hojaRuta": true,
+      "atraso": 38,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434064554,
+      "hojaRuta": true,
+      "atraso": 12,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831396257,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769544446102,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774279013741,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769542791536,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831305967,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831297922,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280877068,
+      "hojaRuta": true,
+      "atraso": 2,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774281323972,
+      "hojaRuta": true,
+      "atraso": 34,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831487972,
+      "hojaRuta": true,
+      "atraso": 10,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831722717,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774279068110,
+      "hojaRuta": true,
+      "atraso": 30,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769534539566,
+      "hojaRuta": true,
+      "atraso": 170,
+      "actividad": 250,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774281295728,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831455315,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280919371,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280957628,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434231879,
+      "hojaRuta": true,
+      "atraso": 274,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774282898799,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280036764,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434332983,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831600551,
+      "hojaRuta": true,
+      "atraso": 120,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769542762157,
+      "hojaRuta": true,
+      "atraso": 32,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831545096,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831680663,
+      "hojaRuta": true,
+      "atraso": 4,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434201737,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1770831568485,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774276053698,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769544388838,
+      "hojaRuta": true,
+      "atraso": 60,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434152105,
+      "hojaRuta": true,
+      "atraso": 30,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1774280710427,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1774278697564,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434064554,
+      "hojaRuta": true,
+      "atraso": 12,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831447058,
+      "hojaRuta": true,
+      "atraso": 216,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-21"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831499924,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-23"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434097595,
+      "hojaRuta": true,
+      "atraso": 154,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-26"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1774279024989,
+      "hojaRuta": true,
+      "atraso": 6,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831645366,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769545788770,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831407681,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831568485,
+      "hojaRuta": true,
+      "atraso": 4,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831730440,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-20"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769543686142,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-20"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434152105,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769542762157,
+      "hojaRuta": true,
+      "atraso": 96,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780062790363,
+      "hojaRuta": true,
+      "atraso": 8,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434201737,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434217993,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434231879,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831415252,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769542440562,
+      "hojaRuta": true,
+      "atraso": 110,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-26"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831590761,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780062972851,
+      "hojaRuta": true,
+      "atraso": 180,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-25"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769544416887,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-20"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1774280522179,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831744202,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-21"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831686411,
+      "hojaRuta": true,
+      "atraso": 230,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-20"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831438995,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769534812095,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831276256,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434332983,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831655800,
+      "hojaRuta": true,
+      "atraso": 22,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831297922,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434394230,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831722717,
+      "hojaRuta": true,
+      "atraso": 112,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831557076,
+      "hojaRuta": true,
+      "atraso": 2,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769542738460,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-20"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434444215,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831396257,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831487972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831635559,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-20"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434477926,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780077397252,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831600551,
+      "hojaRuta": true,
+      "atraso": 82,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831465187,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-22"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1776434019164,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-05-19"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780064618029,
+      "hojaRuta": true,
+      "atraso": 42,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-02"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780076681015,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-02"
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434097595,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434019164,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 250,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1769542440562,
+      "hojaRuta": true,
+      "atraso": 126,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1776433941818,
+      "docenteId": 1776434477926,
+      "hojaRuta": true,
+      "atraso": 6,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1774280052732,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-03"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780064575901,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-02"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1770831305967,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-10"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1769545802838,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-10"
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1769542738460,
+      "hojaRuta": true,
+      "atraso": 164,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280877068,
+      "hojaRuta": true,
+      "atraso": 38,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831655800,
+      "hojaRuta": true,
+      "atraso": 44,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280571221,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831645366,
+      "hojaRuta": true,
+      "atraso": 2,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774278697564,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831635559,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774282917808,
+      "hojaRuta": true,
+      "atraso": 18,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280689337,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1780062790363,
+      "hojaRuta": true,
+      "atraso": 2,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831276256,
+      "hojaRuta": true,
+      "atraso": 40,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774281323972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781707882624,
+      "hojaRuta": true,
+      "atraso": 46,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280466655,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780062710859,
+      "hojaRuta": true,
+      "atraso": 16,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19"
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781705521394,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774281295728,
+      "hojaRuta": true,
+      "atraso": 24,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774279024989,
+      "hojaRuta": true,
+      "atraso": 28,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1769544446102,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831714379,
+      "hojaRuta": true,
+      "atraso": 60,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1780062710859,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781707582677,
+      "hojaRuta": true,
+      "atraso": 170,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774276053698,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831407681,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774279961293,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774276005972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781707854046,
+      "hojaRuta": true,
+      "atraso": 208,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774279068110,
+      "hojaRuta": true,
+      "atraso": 38,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280710427,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781707968790,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831686411,
+      "hojaRuta": true,
+      "atraso": 280,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-24",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774279013741,
+      "hojaRuta": true,
+      "atraso": 10,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-24",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831499924,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-24",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831730440,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-24",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831438995,
+      "hojaRuta": true,
+      "atraso": 10,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-29",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280957628,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-29",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1769534539566,
+      "hojaRuta": true,
+      "atraso": 94,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-29",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280490786,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-26",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774282898799,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-19",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781707924913,
+      "hojaRuta": true,
+      "atraso": 66,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774278967695,
+      "hojaRuta": true,
+      "atraso": 40,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781707792250,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-06-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1770831447058,
+      "hojaRuta": true,
+      "atraso": 520,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280919371,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781706301193,
+      "hojaRuta": true,
+      "atraso": 38,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-26",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434231879,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434217993,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774279961293,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280957628,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434394230,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1769544416887,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1769542791536,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280689337,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280571221,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1783949300702,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1769545788770,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280710427,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1774280490786,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-03"
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780064678669,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774281323972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1769542791536,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-10",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1780064575901,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-03",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1780076681015,
+      "hojaRuta": true,
+      "atraso": 10,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-03",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1783949249948,
+      "hojaRuta": true,
+      "atraso": 70,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774279013741,
+      "hojaRuta": true,
+      "atraso": 6,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831557076,
+      "hojaRuta": true,
+      "atraso": 24,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831590761,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-14",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1783949260974,
+      "hojaRuta": true,
+      "atraso": 16,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434444215,
+      "hojaRuta": true,
+      "atraso": 4,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774282917808,
+      "hojaRuta": true,
+      "atraso": 2,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831415252,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831305967,
+      "hojaRuta": true,
+      "atraso": 56,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1781707854046,
+      "hojaRuta": true,
+      "atraso": 198,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-15",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434064554,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 250,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831714379,
+      "hojaRuta": true,
+      "atraso": 88,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434019164,
+      "hojaRuta": true,
+      "atraso": 38,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831722717,
+      "hojaRuta": true,
+      "atraso": 114,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280522179,
+      "hojaRuta": true,
+      "atraso": 22,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280919371,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781706448810,
+      "hojaRuta": true,
+      "atraso": 12,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1781706448810,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831396257,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774281295728,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831568485,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1781707968790,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1783949578233,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1781707882624,
+      "hojaRuta": true,
+      "atraso": 96,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774279068110,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1769542762157,
+      "hojaRuta": true,
+      "atraso": 100,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831487972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831297922,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-20",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1774280036764,
+      "hojaRuta": true,
+      "atraso": 36,
+      "actividad": 0,
+      "observacion": "Pago en cheque",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-26",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280036764,
+      "hojaRuta": true,
+      "atraso": 132,
+      "actividad": 0,
+      "observacion": "Pagado en cheque",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280466655,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434332983,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774280877068,
+      "hojaRuta": true,
+      "atraso": 44,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774276053698,
+      "hojaRuta": true,
+      "atraso": 10,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434477926,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1769542440562,
+      "hojaRuta": true,
+      "atraso": 222,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-07-30",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1783949769575,
+      "hojaRuta": true,
+      "atraso": 26,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-03",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434097595,
+      "hojaRuta": true,
+      "atraso": 100,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-03",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1786470545613,
+      "hojaRuta": true,
+      "atraso": 66,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-03",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774278967695,
+      "hojaRuta": true,
+      "atraso": 170,
+      "actividad": 0,
+      "observacion": "hoja de ruta entregada en 14/08/2026",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-25",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1780062710859,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831635559,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1786470545613,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1786470250928,
+      "hojaRuta": true,
+      "atraso": 130,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1783949249948,
+      "hojaRuta": true,
+      "atraso": 50,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1780063004952,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1783949300702,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1781707792250,
+      "hojaRuta": true,
+      "atraso": 66,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1780063004952,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "Entrego su hoja de ruta en 17/08/2026",
+      "cancelado": true,
+      "fechaCancelacion": "2026-09-04",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1780060007431,
+      "docenteId": 1780063004952,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "hoja de ruta entregada en 17/08/2026",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831276256,
+      "hojaRuta": true,
+      "atraso": 60,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831557076,
+      "hojaRuta": true,
+      "atraso": 46,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1769534812095,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-17",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831407681,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831655800,
+      "hojaRuta": true,
+      "atraso": 38,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1769544446102,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831568485,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434332983,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831438995,
+      "hojaRuta": true,
+      "atraso": 44,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434394230,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434477926,
+      "hojaRuta": true,
+      "atraso": 30,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1783949260974,
+      "hojaRuta": true,
+      "atraso": 30,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1774278697564,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831396257,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 250,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434152105,
+      "hojaRuta": true,
+      "atraso": 60,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1776434152105,
+      "hojaRuta": true,
+      "atraso": 56,
+      "actividad": 0,
+      "observacion": "Hoja de ruta entregada en 18/08/2026",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-25",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831465187,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1780064575901,
+      "hojaRuta": true,
+      "atraso": 106,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434217993,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831499924,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831590761,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1769545788770,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-18",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831415252,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1769544416887,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434231879,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1780062790363,
+      "hojaRuta": true,
+      "atraso": 36,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434201737,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831297922,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831305967,
+      "hojaRuta": true,
+      "atraso": 14,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434019164,
+      "hojaRuta": true,
+      "atraso": 78,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1774276005972,
+      "hojaRuta": true,
+      "atraso": 24,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1780077397252,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1786470175999,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1786470602734,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831600551,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1774282898799,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "Hoja de ruta entregada en 20/08/2026",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-25",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1781706301193,
+      "hojaRuta": true,
+      "atraso": 28,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1780076681015,
+      "hojaRuta": true,
+      "atraso": 56,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831686411,
+      "hojaRuta": true,
+      "atraso": 130,
+      "actividad": 250,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1774279024989,
+      "hojaRuta": true,
+      "atraso": 10,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-21",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1769534539566,
+      "hojaRuta": true,
+      "atraso": 26,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-27",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1769542440562,
+      "hojaRuta": true,
+      "atraso": 150,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-27",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1770831487972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-27",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1781705521394,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-27",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1783949769575,
+      "hojaRuta": true,
+      "atraso": 16,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-27",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1776434444215,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-27",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1783949631870,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "Entrego hoja de ruta en 25/08/2026",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-25",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1783949631870,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-27",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1783949224369,
+      "docenteId": 1770831465187,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-25",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1769542738460,
+      "hojaRuta": true,
+      "atraso": 308,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": true,
+      "fechaCancelacion": "2026-08-28"
+    },
+    {
+      "periodoId": 1781705468632,
+      "docenteId": 1781705568435,
+      "hojaRuta": true,
+      "atraso": 40,
+      "actividad": 0,
+      "observacion": "Hoja de ruta entregado en 02/09/2026",
+      "cancelado": true,
+      "fechaCancelacion": "2026-09-04",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1786470087831,
+      "docenteId": 1786470489436,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": true,
+      "fechaCancelacion": "2026-09-08",
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831730440,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774279961293,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769543686142,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1780062710859,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774280036764,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774280466655,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1776434201737,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1781707792250,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769542791536,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1780063004952,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1781707968790,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1781707882624,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774280689337,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774280710427,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774280957628,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774281295728,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831635559,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1786470602734,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": false
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774281323972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1780076681015,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831600551,
+      "hojaRuta": false,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1789070110463,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1789070209410,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1789070129264,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1789070169985,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774280571221,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774278697564,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769534539566,
+      "hojaRuta": false,
+      "atraso": 88,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769542738460,
+      "hojaRuta": true,
+      "atraso": 92,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774280490786,
+      "hojaRuta": false,
+      "atraso": 8,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769542762157,
+      "hojaRuta": false,
+      "atraso": 16,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831686411,
+      "hojaRuta": true,
+      "atraso": 14,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1781706448810,
+      "hojaRuta": false,
+      "atraso": 40,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1789070186111,
+      "hojaRuta": true,
+      "atraso": 16,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1789070196738,
+      "hojaRuta": true,
+      "atraso": 8,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831655800,
+      "hojaRuta": false,
+      "atraso": 30,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1781707854046,
+      "hojaRuta": true,
+      "atraso": 44,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774279068110,
+      "hojaRuta": true,
+      "atraso": 10,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1789070219507,
+      "hojaRuta": true,
+      "atraso": 72,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831276256,
+      "hojaRuta": true,
+      "atraso": 20,
+      "actividad": 0,
+      "observacion": "",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831447058,
+      "hojaRuta": true,
+      "atraso": 90,
+      "actividad": 0,
+      "observacion": "",
+      "cancelado": false,
+      "fechaCancelacion": null,
+      "aprobado": true
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774276005972,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1lBa9jm-jcQBxFCKIyxxUgoLGY-XvUJDG/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774279013741,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1mP-PFoWxFxciOnedXsoA84wwZfy-rBmF/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1774276053698,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1u2t1I4NfwLoD8MYNRlhUkqUBuGoJpjNb/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831499924,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": null,
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769544429302,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1fkUQH9zUJbVHAQmUM_xIxZGLWIEw4Rmd/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1781705521394,
+      "hojaRuta": true,
+      "atraso": 12,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1kujTPTCWIEU3p55V50t0p3cSggTnVINm/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831438995,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1UAbyh3EmRwGTuCnNS8SGw7Q5rNgPQtD3/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1770831407681,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1n2LklICHrXubd_LLci0K_KiEyNvvwCh4/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1781707924913,
+      "hojaRuta": true,
+      "atraso": 16,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1O-2cRv-0oQYVqcEhg8daIc7ywyzwC-HB/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769544446102,
+      "hojaRuta": true,
+      "atraso": 0,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": null,
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    },
+    {
+      "periodoId": 1789069528603,
+      "docenteId": 1769534812095,
+      "hojaRuta": true,
+      "atraso": 8,
+      "actividad": 0,
+      "observacion": "",
+      "linkRespaldo": "https://drive.google.com/file/d/1o9kjdTEz6v6ZAHJSU3p_pKwC8X-GI2VW/view?usp=drivesdk",
+      "aprobado": true,
+      "cancelado": false,
+      "fechaCancelacion": null
+    }
+  ],
+  "periodoActivoId": 1789069528603
+}
