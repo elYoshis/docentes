@@ -40,8 +40,16 @@
 
         <!-- PESTAÑA: COBROS -->
         <section id="tab-cobros" class="tab-content active-tab">
-            <div class="header-section">
-                <h2>Planilla de Cobros</h2>
+            <div class="header-section header-vertical">
+        <h2>Control de Cobros Diarios</h2>
+        
+        <!-- NUEVO: Pestañas Internas -->
+        <div style="display: flex; gap: 10px; width: 100%; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+            <button id="btn-tab-general" class="btn-internal active" onclick="cambiarCategoriaCobro('general')">🎓 General</button>
+            <button id="btn-tab-medicina" class="btn-internal" onclick="cambiarCategoriaCobro('medicina')">⚕️ Medicina</button>
+        </div>
+
+        <div class="input-group" style="width: 100%;">
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                     <button class="btn-success" onclick="abrirModalSeleccionMasiva()">👥 Cargar Docentes
                         (Selección)</button>
@@ -112,7 +120,7 @@
                             <th onclick="ordenarTabla(this, 3)">Nombre(s) ↕</th>
                             <th onclick="ordenarTabla(this, 4)" style="text-align: center">H. Ruta ↕</th>
                             <th onclick="ordenarTabla(this, 5)">Atraso ↕</th>
-                            <th onclick="ordenarTabla(this, 6)">Actividad ↕</th>
+                            <th id="th-actividad" onclick="ordenarTabla(this, 6)">Actividad ↕</th>
                             <th onclick="ordenarTabla(this, 7)">Total ↕</th>
                             <th>
                                 <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
@@ -266,9 +274,10 @@
 
                 <label class="form-label">Multa Atraso (Bs):</label>
                 <input type="number" id="input-atraso" class="form-input-clean" value="0" step="0.01" />
-
+                <div id="contenedor-actividad">
                 <label class="form-label">Multa Actividad (Bs):</label>
                 <input type="number" id="input-actividad" class="form-input-clean" value="0" step="0.01" />
+                </div>
 
                 <label class="form-label">📄 Respaldo (Hoja de Ruta):</label>
                 <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">

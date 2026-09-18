@@ -1,3 +1,18 @@
+let categoriaCobroActiva = 'general';
+
+function cambiarCategoriaCobro(categoria) {
+    categoriaCobroActiva = categoria;
+    
+    // Cambiar estilos de los botones
+    document.getElementById('btn-tab-general').classList.toggle('active', categoria === 'general');
+    document.getElementById('btn-tab-medicina').classList.toggle('active', categoria === 'medicina');
+    
+    // Ocultar/Mostrar la cabecera de Actividad en la tabla
+    const thAct = document.getElementById('th-actividad');
+    if (thAct) thAct.style.display = (categoria === 'medicina') ? 'none' : '';
+    
+    renderCobros();
+}
 function renderCobros() {
   const tbody = document.getElementById("tabla-cobros-body");
   const container = document.getElementById("tabla-container");
@@ -19,11 +34,12 @@ function renderCobros() {
   tbody.innerHTML = "";
 
   // 3. FILTRAR: Obtener solo los cobros que pertenecen al periodo activo
-  const cobrosDelMes = datos.cobros.filter(
-    (c) => c.periodoId === datos.periodoActivoId,
+  const cobrosDelMes = datos.cobros.filter((c) => 
+      c.periodoId === datos.periodoActivoId && 
+      (c.categoria || 'general') === categoriaCobroActiva
   );
 
-  // 4. LÓGICA DEL DASHBOARD (Se calcula solo con los datos del mes activo)
+ 
   // LÓGICA DEL DASHBOARD (Se calcula sumando SOLO si el checkbox está aprobado)
   const recAtraso = cobrosDelMes.reduce(
     (acc, c) => (c.aprobado ? acc + (parseFloat(c.atraso) || 0) : acc),
@@ -33,6 +49,8 @@ function renderCobros() {
     (acc, c) => (c.aprobado ? acc + (parseFloat(c.actividad) || 0) : acc),
     0,
   );
+
+  
 
   // Actualiza los Divs en la pantalla
   document.getElementById("dash-atraso-txt").textContent =
@@ -72,7 +90,8 @@ function renderCobros() {
 
   // 5. RENDERIZAR TABLA (Con columnas separadas)
   if (cobrosDelMes.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="12" style="text-align:center; color: #999; padding: 20px;">No hay registros de cobro para este mes. Haz clic en "+ Registrar Pago" para empezar.</td></tr>`;
+    const colSpan = categoriaCobroActiva === 'medicina' ? 11 : 12;
+    tbody.innerHTML = `<tr><td colspan="${colSpan}" style="text-align:center; color: #999; padding: 20px;">No hay registros de cobro para este mes en esta categoría.</td></tr>`;
     return;
   }
 
@@ -82,8 +101,9 @@ function renderCobros() {
     const paterno = doc ? doc.paterno.toUpperCase() : "-";
     const materno = doc ? (doc.materno || "").toUpperCase() : "-";
     const nombre = doc ? doc.nombre.toUpperCase() : "ELIMINADO";
-
-    const total = (parseFloat(c.atraso) || 0) + (parseFloat(c.actividad) || 0);
+    const ocultarAct = categoriaCobroActiva === 'medicina' ? 'style="display:none;"' : '';
+    const valAct = categoriaCobroActiva === 'medicina' ? 0 : (parseFloat(c.actividad) || 0);
+    const total = (parseFloat(c.atraso) || 0) + valAct;
 
     const celdaAprobado = `
             <div style="text-align: center;">
@@ -136,7 +156,7 @@ function renderCobros() {
                 </td>
                 <td style="text-align:center">${celdaRuta}</td>
                 <td>Bs. ${c.atraso.toFixed(2)}</td>
-                <td>Bs. ${c.actividad.toFixed(2)}</td>
+                <td ${ocultarAct}>Bs. ${valAct.toFixed(2)}</td>
                 <td><b>Bs. ${total.toFixed(2)}</b></td>
                 <td>${celdaAprobado}</td>
                 <td>${celdaPago}</td>
@@ -147,7 +167,7 @@ function renderCobros() {
 
 function cambiarEstadoPago(docenteId, marcarComoPagado) {
   const cobro = datos.cobros.find(
-    (c) => c.docenteId === docenteId && c.periodoId === datos.periodoActivoId,
+    (c) => c.docenteId === docenteId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
   );
   if (!cobro) return;
 
@@ -171,7 +191,7 @@ function cambiarEstadoPago(docenteId, marcarComoPagado) {
 
 function toggleAprobado(docenteId) {
   const cobro = datos.cobros.find(
-    (c) => c.docenteId === docenteId && c.periodoId === datos.periodoActivoId,
+    (c) => c.docenteId === docenteId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
   );
 
   if (cobro) {
@@ -196,19 +216,13 @@ function toggleAprobado(docenteId) {
 }
 
 function toggleAllAprobado(event) {
-  // Evita que el clic en el checkbox dispare el ordenamiento de la columna
   if (event) event.stopPropagation();
-
-  // Obtenemos si el checkbox principal está marcado o desmarcado
   const estadoGlobal = document.getElementById("check-all-aprobado").checked;
-
-  // Obtenemos solo los cobros del mes actual
+  // Se añade el filtro de categoría aquí:
   const cobrosDelMes = datos.cobros.filter(
-    (c) => c.periodoId === datos.periodoActivoId,
+    (c) => c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
   );
-
   if (cobrosDelMes.length === 0) return;
-
   // Aplicamos el nuevo estado a todos
   cobrosDelMes.forEach((c) => {
     c.aprobado = estadoGlobal;
@@ -229,6 +243,13 @@ function toggleAllAprobado(event) {
 function abrirModalCobro(docenteId = null) {
   const select = document.getElementById("select-docente-cobro");
   select.innerHTML = '<option value="">Seleccione Docente...</option>';
+  document.getElementById("contenedor-actividad").style.display = categoriaCobroActiva === 'medicina' ? 'none' : 'block';
+
+  const cobroExistente = datos.cobros.find(c => 
+      c.docenteId === docenteId && 
+      c.periodoId === datos.periodoActivoId && 
+      (c.categoria || 'general') === categoriaCobroActiva
+  );
 
   const docentesOrdenados = [...datos.docentes].sort((a, b) =>
     a.paterno.localeCompare(b.paterno),
@@ -250,9 +271,9 @@ function abrirModalCobro(docenteId = null) {
     document.getElementById("nombre-archivo-txt").style.color = "#64748b";
   } else {
     // Si enviamos docenteId (estamos editando un registro existente del mes)
+    // Si enviamos docenteId (estamos editando un registro existente del mes)
     const c = datos.cobros.find(
-      (cob) =>
-        cob.docenteId === docenteId && cob.periodoId === datos.periodoActivoId,
+      (cob) => cob.docenteId === docenteId && cob.periodoId === datos.periodoActivoId && (cob.categoria || 'general') === categoriaCobroActiva
     );
     document.getElementById("select-docente-cobro").value = docenteId;
     document.getElementById("check-hoja-ruta").checked = c.hojaRuta;
@@ -297,12 +318,13 @@ async function guardarCobro(e) {
   }
   // --------------------------------
 
-  datos.cobros = datos.cobros.filter(
-    (c) => !(c.docenteId === dId && c.periodoId === datos.periodoActivoId),
+ datos.cobros = datos.cobros.filter(
+    (c) => !(c.docenteId === dId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva)
   );
 
   datos.cobros.push({
     periodoId: datos.periodoActivoId,
+    categoria: categoriaCobroActiva,
     docenteId: dId,
     hojaRuta: document.getElementById("check-hoja-ruta").checked,
     atraso: parseFloat(document.getElementById("input-atraso").value) || 0,
@@ -324,8 +346,7 @@ function limpiarSeleccionArchivo() {
 }
 function borrarCobro(docenteId) {
   datos.cobros = datos.cobros.filter(
-    (c) =>
-      !(c.docenteId === docenteId && c.periodoId === datos.periodoActivoId),
+    (c) => !(c.docenteId === docenteId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva)
   );
   guardarYRefrescar();
 }
@@ -348,8 +369,8 @@ function abrirModalSeleccionMasiva() {
 
   docentesOrdenados.forEach((doc) => {
     // Solo mostramos a los docentes que NO están ya agregados en este mes
-    const existe = datos.cobros.some(
-      (c) => c.docenteId === doc.id && c.periodoId === datos.periodoActivoId,
+   const existe = datos.cobros.some(
+      (c) => c.docenteId === doc.id && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
     );
 
     if (!existe) {
@@ -389,6 +410,7 @@ function guardarDocentesSeleccionados() {
 
     datos.cobros.push({
       periodoId: datos.periodoActivoId,
+      categoria: categoriaCobroActiva,
       docenteId: docId,
       hojaRuta: false,
       atraso: 0,

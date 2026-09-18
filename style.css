@@ -607,3 +607,35 @@ body.dark-mode .ql-snow.ql-toolbar button:hover,
 body.dark-mode .ql-snow.ql-toolbar button:focus,
 body.dark-mode .ql-snow.ql-toolbar button.ql-active { background-color: #334155; }
 
+/* =========================================
+   PESTAÑAS INTERNAS DE CATEGORÍAS
+   ========================================= */
+.btn-internal {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.btn-internal:hover {
+    background: #f1f5f9;
+}
+.btn-internal.active {
+    background: var(--secondary);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .btn-internal {
+    color: #94a3b8;
+}
+body.dark-mode .btn-internal:hover {
+    background: #1e293b;
+}
+body.dark-mode .btn-internal.active {
+    background: #3b82f6;
+    color: white;
+}
