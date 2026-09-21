@@ -1,87 +1,69 @@
 
-let docenteEnEdicion = null; // Variable global temporal
+let docenteEnEdicion = null;
+
 function renderDocentes() {
     const tbody = document.getElementById('tabla-docentes-body');
     if (!tbody) return;
-    tbody.innerHTML = "";
 
-    // Dentro de la función renderDocentes()
-datos.docentes.forEach((doc, i) => {
-    tbody.innerHTML += `
+    const docentesOrdenados = [...datos.docentes].sort((a, b) => {
+        const diferenciaPaterno = normalizarTexto(a.paterno).localeCompare(normalizarTexto(b.paterno));
+        if (diferenciaPaterno !== 0) return diferenciaPaterno;
+        const diferenciaMaterno = normalizarTexto(a.materno).localeCompare(normalizarTexto(b.materno));
+        if (diferenciaMaterno !== 0) return diferenciaMaterno;
+        return normalizarTexto(a.nombre).localeCompare(normalizarTexto(b.nombre));
+    });
+
+    tbody.innerHTML = docentesOrdenados.map((doc, index) => `
         <tr>
-            <td>${i + 1}</td>
-            <td>${doc.paterno.toUpperCase()}</td>
-            <td>${(doc.materno || "").toUpperCase()}</td>
-            <td>${doc.nombre.toUpperCase()}</td>
+            <td>${index + 1}</td>
+            <td>${normalizarTexto(doc.paterno)}</td>
+            <td>${normalizarTexto(doc.materno || '')}</td>
+            <td>${normalizarTexto(doc.nombre)}</td>
             <td>
-                <!-- Nuevo botón de Historial -->
                 <button class="btn-primary" style="background-color: #3b82f6; padding: 5px 10px; margin-right: 5px;" onclick="abrirModalHistorial(${doc.id})">👁️ Historial</button>
-                <button onclick="abrirModalEditar(${i})" class="btn-edit">✏️ Editar</button>
+                <button onclick="abrirModalEditar(${doc.id})" class="btn-edit">✏️ Editar</button>
                 <button class="btn-delete" onclick="borrarDocente(${doc.id})">🗑️</button>
             </td>
-        </tr>`;
-});
+        </tr>
+    `).join('');
 }
 
 function agregarDocente() {
-    // 1. Prevenir que el formulario recargue la página (si se usa dentro de un <form>)
     if (event) event.preventDefault();
 
     const nom = document.getElementById('docNombre').value.trim();
     const pat = document.getElementById('docPaterno').value.trim();
     const mat = document.getElementById('docMaterno').value.trim();
 
-    // 2. Validación de campos obligatorios con Toast
     if (!nom || !pat) {
-        showToast("Nombre y Apellido Paterno son obligatorios", "error");
+        showToast('Nombre y Apellido Paterno son obligatorios', 'error');
         return;
     }
 
-    // --- LÓGICA ANTI-DUPLICADOS ---
-    
-    // Función interna para limpiar texto (quitar tildes y dejar en mayúsculas)
-    const normalizar = (t) => t.toUpperCase()
-                               .normalize("NFD")
-                               .replace(/[\u0300-\u036f]/g, "")
-                               .replace(/,/g, "")
-                               .trim();
-
-    const nuevoNombreCompleto = normalizar(`${nom} ${pat} ${mat}`);
-
-    // 3. Revisar si ya existe en la base de datos
-    const existe = datos.docentes.some(d => {
-        const nombreExistente = normalizar(`${d.nombre} ${d.paterno} ${d.materno}`);
-        return nombreExistente === nuevoNombreCompleto;
-    });
+    const nuevoNombreCompleto = normalizarTexto(`${nom} ${pat} ${mat}`);
+    const existe = datos.docentes.some((d) => normalizarTexto(`${d.nombre} ${d.paterno} ${d.materno}`) === nuevoNombreCompleto);
 
     if (existe) {
-        showToast(`El docente "${nom} ${pat}" ya está registrado`, "error");
+        showToast(`El docente "${nom} ${pat}" ya está registrado`, 'error');
         document.getElementById('docPaterno').focus();
         return;
     }
 
-    // 4. Si no existe, procedemos a guardar
-    const nuevoDocente = {
+    datos.docentes.push({
         id: Date.now(),
         nombre: nom,
         paterno: pat,
         materno: mat
-    };
+    });
 
-    datos.docentes.push(nuevoDocente);
-    
-    // Ordenar por apellido paterno
-    datos.docentes.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    datos.docentes.sort((a, b) => normalizarTexto(a.paterno).localeCompare(normalizarTexto(b.paterno)) || normalizarTexto(a.nombre).localeCompare(normalizarTexto(b.nombre)));
 
-    // Guardar en LocalStorage y redibujar tablas
     guardarYRefrescar();
+    showToast('Docente registrado con éxito', 'success');
 
-    // 5. Feedback de éxito y limpieza
-    showToast("Docente registrado con éxito", "success");
-
-    document.getElementById('docNombre').value = "";
-    document.getElementById('docPaterno').value = "";
-    document.getElementById('docMaterno').value = "";
+    document.getElementById('docNombre').value = '';
+    document.getElementById('docPaterno').value = '';
+    document.getElementById('docMaterno').value = '';
     document.getElementById('docNombre').focus();
 }
 
@@ -91,17 +73,14 @@ function obtenerNombreCompleto(doc) {
 }
 
 // 1. ABRIR: Carga los datos del docente en los inputs
-function abrirModalEditar(index) {
-    const docente = datos.docentes[index];
+function abrirModalEditar(id) {
+    const docente = datos.docentes.find((d) => d.id === Number(id));
     if (!docente) return;
 
-    // Llenamos los campos con la info actual
-    document.getElementById('edit-index').value = index; // Guardamos el índice escondido
+    document.getElementById('edit-index').value = docente.id;
     document.getElementById('input-nombre').value = docente.nombre.toUpperCase();
     document.getElementById('input-paterno').value = docente.paterno.toUpperCase();
-    document.getElementById('input-materno').value = docente.materno.toUpperCase() || "";
-
-    // Mostramos el modal (usando flex para que el CSS centre)
+    document.getElementById('input-materno').value = (docente.materno || '').toUpperCase();
     document.getElementById('modal-editar').style.display = 'flex';
 }
 
@@ -112,29 +91,25 @@ function cerrarModalEditar() {
 
 // 3. GUARDAR: Toma los nuevos datos y actualiza
 function guardarEdicion() {
-    const index = document.getElementById('edit-index').value;
+    const docenteId = Number(document.getElementById('edit-index').value);
     const nNom = document.getElementById('input-nombre').value.trim();
     const nPat = document.getElementById('input-paterno').value.trim();
     const nMat = document.getElementById('input-materno').value.trim();
 
-    // Validación básica
     if (!nNom || !nPat) {
-        alert("⚠️ El nombre y el apellido paterno son obligatorios.");
+        alert('⚠️ El nombre y el apellido paterno son obligatorios.');
         return;
     }
 
-    // Actualizamos el objeto en la memoria
-    datos.docentes[index].nombre = nNom;
-    datos.docentes[index].paterno = nPat;
-    datos.docentes[index].materno = nMat;
+    const docente = datos.docentes.find((d) => d.id === docenteId);
+    if (!docente) return;
 
-    // Guardamos en LocalStorage y refrescamos la vista
-   guardarYRefrescar(); 
-    renderDocentes(); // Refresca la tabla de docentes
-    
-    // Si tienes el Panel Unificado activo, refréscalo también
-    if (typeof renderUnified === "function") renderUnified();
+    docente.nombre = nNom;
+    docente.paterno = nPat;
+    docente.materno = nMat;
 
+    guardarYRefrescar();
+    if (typeof renderUnified === 'function') renderUnified();
     cerrarModalEditar();
 }
 

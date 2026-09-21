@@ -22,7 +22,7 @@
             <button onclick="cambiarPestana('tab-reporte')" id="btn-tab-reporte">Reporte General</button>
             <button onclick="cambiarPestana('tab-configuracion')" id="btn-tab-configuracion">Configuración</button>
         </div>
-        <div style="display: flex; align-items: center; gap: 15px;">
+        <div class="nav-tools">
             <div class="periodo-indicator">
                 <label>Periodo:</label>
                 <select id="selectPeriodoNav" onchange="cambiarPeriodoDesdeNav()">
@@ -44,13 +44,13 @@
         <h2>Control de Cobros Diarios</h2>
         
         <!-- NUEVO: Pestañas Internas -->
-        <div style="display: flex; gap: 10px; width: 100%; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px;">
+        <div class="subtabs">
             <button id="btn-tab-general" class="btn-internal active" onclick="cambiarCategoriaCobro('general')">🎓 General</button>
             <button id="btn-tab-medicina" class="btn-internal" onclick="cambiarCategoriaCobro('medicina')">⚕️ Medicina</button>
         </div>
 
-        <div class="input-group" style="width: 100%;">
-                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div class="input-group toolbar-actions">
+                <div class="button-row">
                     <button class="btn-success" onclick="abrirModalSeleccionMasiva()">👥 Cargar Docentes
                         (Selección)</button>
                     <button class="btn-primary" onclick="abrirModalCobro()">+ Registrar Pago Manual</button>
@@ -80,30 +80,28 @@
 
             <div id="tabla-container">
                 <div class="general-notes-container">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <h4 style="margin: 0;">📝 Notas Generales del Periodo</h4>
-                        <button onclick="guardarNotaGeneral()" class="btn-success"
-                            style="padding: 5px 12px; font-size: 0.85rem;">💾 Guardar Nota</button>
+                    <div class="notes-toolbar">
+                        <h4>📝 Notas Generales del Periodo</h4>
+                        <button onclick="guardarNotaGeneral()" class="btn-success btn-small">💾 Guardar Nota</button>
                     </div>
 
                     <!-- Quill necesita que sea un DIV y no un TEXTAREA -->
-                    <div id="editor-nota-general" style="height: 120px; background: white;"></div>
+                    <div id="editor-nota-general" class="editor-nota-general"></div>
                 </div>
 
-                <div class="filter-group" style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-                    <input type="text" id="search-cobro" class="search-input" style="flex: 1; min-width: 200px;"
+                <div class="filter-group">
+                    <input type="text" id="search-cobro" class="search-input search-cobro"
                         placeholder="🔍 Buscar por nombre, apellido, monto o nota..."
                         onkeyup="filtrarCobrosAvanzado()" />
 
-                    <select id="filtro-estado" class="search-input" style="width: auto;"
+                    <select id="filtro-estado" class="search-input filter-inline"
                         onchange="filtrarCobrosAvanzado()">
                         <option value="">Estado (Todos)</option>
                         <option value="aprobado">✅ Aprobado / Pagado</option>
                         <option value="pendiente">⚠️ Pendiente</option>
                     </select>
 
-                    <select id="filtro-ruta" class="search-input" style="width: auto;"
+                    <select id="filtro-ruta" class="search-input filter-inline"
                         onchange="filtrarCobrosAvanzado()">
                         <option value="">Hoja de Ruta (Todas)</option>
                         <option value="entregada">✅ Entregada</option>
@@ -123,10 +121,10 @@
                             <th id="th-actividad" onclick="ordenarTabla(this, 6)">Actividad ↕</th>
                             <th onclick="ordenarTabla(this, 7)">Total ↕</th>
                             <th>
-                                <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                                <div class="th-checkbox-wrap">
                                     <input type="checkbox" id="check-all-aprobado" onclick="toggleAllAprobado(event)"
-                                        style="transform: scale(1.3); cursor: pointer; margin: 0;">
-                                    <span onclick="ordenarTabla(this, 8)" style="cursor: pointer;">Estado ↕</span>
+                                        class="check-all-aprobado">
+                                    <span onclick="ordenarTabla(this, 8)" class="sort-label">Estado ↕</span>
                                 </div>
                             </th>
                             <th onclick="ordenarTabla(this, 9)">Pago ↕</th>
@@ -262,8 +260,6 @@
         <div class="modal-content">
             <h3 id="modal-titulo">Registrar Movimiento</h3>
             <form onsubmit="guardarCobro(event)" class="modal-form">
-                <input type="hidden" id="edit-index" />
-
                 <label class="form-label">Docente:</label>
                 <select id="select-docente-cobro" class="form-input-clean" required></select>
 
@@ -280,18 +276,18 @@
                 </div>
 
                 <label class="form-label">📄 Respaldo (Hoja de Ruta):</label>
-                <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
+                <div class="file-upload-row">
                     <!-- El input está oculto, usamos el label como botón estilizado -->
-                    <input type="file" id="input-archivo-ruta" accept="image/*,application/pdf" capture="environment" style="display: none;" onchange="actualizarNombreArchivo(this)" />
+                    <input type="file" id="input-archivo-ruta" accept="image/*,application/pdf" capture="environment" class="input-file-hidden" onchange="actualizarNombreArchivo(this)" />
                     
-                    <label for="input-archivo-ruta" class="btn-primary" style="background: #3b82f6; cursor: pointer; text-align: center; flex: 1; padding: 8px; font-size: 0.9rem;">
+                    <label for="input-archivo-ruta" class="btn-primary upload-btn">
                         📸 Escanear / Subir
                     </label>
-                    <span id="nombre-archivo-txt" style="font-size: 0.8rem; color: #64748b; flex: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <span id="nombre-archivo-txt" class="file-name-label">
                         Sin archivo
                     </span>
                     <!-- Botón para limpiar la selección -->
-                    <button type="button" onclick="limpiarSeleccionArchivo()" style="background: #ef4444; color: white; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;" title="Quitar archivo seleccionado">
+                    <button type="button" class="btn-clear-file" onclick="limpiarSeleccionArchivo()" title="Quitar archivo seleccionado">
                         ❌
                     </button>
                 </div>
@@ -300,8 +296,7 @@
                 <textarea id="input-observacion" class="form-input-clean" rows="2"
                     placeholder="Ej: Faltan 5 Bs..."></textarea>
 
-                <div class="modal-actions"
-                    style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 15px;">
+                <div class="modal-actions">
                     <button type="button" class="btn-modal-cancel" onclick="cerrarModal()">Cerrar</button>
                     <button type="submit" class="btn-modal-save">Guardar</button>
                 </div>
@@ -311,20 +306,19 @@
 
     <!-- Modal: Selección Masiva de Docentes -->
     <div id="modal-seleccion-docentes" class="modal">
-        <div class="modal-content" style="max-height: 85vh; display: flex; flex-direction: column;">
+        <div class="modal-content modal-scroll-content">
             <h3 id="modal-sel-titulo">Seleccionar Docentes del Mes</h3>
-            <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px;">Marca a los docentes que trabajarán en este
+            <p class="selection-helper">Marca a los docentes que trabajarán en este
                 periodo:</p>
 
             <input type="text" id="buscar-docente-modal" class="search-input" placeholder="🔍 Buscar por nombre..."
-                onkeyup="filtrarListaDocentesModal()" style="margin-bottom: 10px;">
+                onkeyup="filtrarListaDocentesModal()" class="search-docente-modal">
 
-            <div id="lista-checkbox-docentes"
-                style="display: flex; flex-direction: column; gap: 8px; overflow-y: auto; padding-right: 5px; flex-grow: 1; max-height: 350px;">
+            <div id="lista-checkbox-docentes" class="docentes-list-checkboxes">
                 <!-- JS inyectará los checkboxes aquí -->
             </div>
 
-            <div class="modal-actions" style="margin-top: 15px; display: flex; justify-content: flex-end; gap: 10px;">
+            <div class="modal-actions">
                 <button type="button" class="btn-modal-cancel" onclick="cerrarModalSeleccion()">Cancelar</button>
                 <button type="button" class="btn-modal-save" onclick="guardarDocentesSeleccionados()">Cargar
                     Seleccionados</button>
@@ -335,11 +329,11 @@
     <!-- Modal: Editar Docente -->
     <div id="modal-editar" class="modal-overlay">
         <div class="modal-card">
-            <div class="modal-header" style="padding: 20px; border-bottom: 1px solid #eee;">
-                <h3 style="margin: 0;">✏️ Editar Docente</h3>
+            <div class="modal-header">
+                <h3>✏️ Editar Docente</h3>
             </div>
 
-            <div class="modal-body modal-form" style="padding: 20px;">
+            <div class="modal-body modal-form">
                 <input type="hidden" id="edit-index">
 
                 <div>
@@ -359,8 +353,7 @@
                 </div>
             </div>
 
-            <div class="modal-footer"
-                style="display:flex; justify-content:flex-end; gap:10px; padding: 20px; border-top: 1px solid #eee;">
+            <div class="modal-footer">
                 <button onclick="cerrarModalEditar()" class="btn-modal-cancel">Cancelar</button>
                 <button onclick="guardarEdicion()" class="btn-modal-save">Guardar Cambios</button>
             </div>
@@ -369,46 +362,43 @@
 
     <!-- Modal: Ficha Histórica del Docente -->
     <div id="modal-historial" class="modal-overlay">
-        <div class="modal-card" style="max-width: 600px;">
-            <div class="modal-header"
-                style="padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
-                <h3 style="margin: 0;">📜 Ficha Histórica</h3>
+        <div class="modal-card historial-modal-card">
+            <div class="modal-header modal-header-history">
+                <h3>📜 Ficha Histórica</h3>
                 <button onclick="cerrarModalHistorial()"
-                    style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                    class="btn-close-history">&times;</button>
             </div>
 
-            <div class="modal-body" style="padding: 20px; max-height: 60vh; overflow-y: auto;">
-                <h4 id="historial-nombre"
-                    style="margin-top: 0; margin-bottom: 15px; color: #2563eb; font-size: 1.2rem;">Nombre del Docente
-                </h4>
+            <div class="modal-body historial-body">
+                <h4 id="historial-nombre" class="historial-title">Nombre del Docente</h4>
 
                 <!-- Tarjetas de Resumen -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px;">
-                    <div class="summary-box" style="padding: 15px 10px; border-left: 4px solid #3b82f6;">
-                        <small style="color: #666;">Total Acumulado</small>
-                        <div id="hist-total-multas" style="font-weight: bold; font-size: 1.1rem; margin-top: 5px;">Bs.
+                <div class="historial-summary">
+                    <div class="summary-box historial-stat stat-blue">
+                        <small>Total Acumulado</small>
+                        <div id="hist-total-multas">Bs.
                             0.00</div>
                     </div>
-                    <div class="summary-box" style="padding: 15px 10px; border-left: 4px solid #22c55e;">
-                        <small style="color: #666;">Total Pagado</small>
-                        <div id="hist-total-pagado" style="font-weight: bold; font-size: 1.1rem; margin-top: 5px;">Bs.
+                    <div class="summary-box historial-stat stat-green">
+                        <small>Total Pagado</small>
+                        <div id="hist-total-pagado">Bs.
                             0.00</div>
                     </div>
-                    <div class="summary-box" style="padding: 15px 10px; border-left: 4px solid #ef4444;">
-                        <small style="color: #666;">Deuda Pendiente</small>
-                        <div id="hist-total-deuda" style="font-weight: bold; font-size: 1.1rem; margin-top: 5px;">Bs.
+                    <div class="summary-box historial-stat stat-red">
+                        <small>Deuda Pendiente</small>
+                        <div id="hist-total-deuda">Bs.
                             0.00</div>
                     </div>
                 </div>
 
                 <!-- Tabla de Historial -->
-                <table class="table-minimal" style="width: 100%;">
+                <table class="table-minimal">
                     <thead>
                         <tr>
                             <th>Periodo</th>
-                            <th style="text-align: right;">Atraso</th>
-                            <th style="text-align: right;">Actividad</th>
-                            <th style="text-align: center;">Estado</th>
+                            <th class="text-right">Atraso</th>
+                            <th class="text-right">Actividad</th>
+                            <th class="text-center">Estado</th>
                         </tr>
                     </thead>
                     <tbody id="historial-tabla-body"></tbody>
@@ -418,7 +408,7 @@
     </div>
 
     <!-- CONTENEDOR DE TOASTS -->
-    <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 11000;"></div>
+    <div id="toast-container" class="toast-container"></div>
 
     <!-- ================= SCRIPTS ================= -->
 

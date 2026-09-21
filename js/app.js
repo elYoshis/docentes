@@ -13,7 +13,6 @@ let datosSubidaPendiente = null; // Guardará el archivo y nombre si pide login
 
 function conectarConGoogle() {
     if (typeof google !== "undefined" && google.accounts) {
-        // Toda la inicialización de Google ahora ocurre directamente aquí adentro
         tokenClient = google.accounts.oauth2.initTokenClient({
             client_id: CLIENT_ID,
             scope: SCOPES,
@@ -326,33 +325,12 @@ function inicializarTema() {
     }
 }
 
-function conectarConGoogle() {
-    if (typeof google !== "undefined" && google.accounts) {
-        tokenClient = google.accounts.oauth2.initTokenClient({
-            client_id: CLIENT_ID,
-            scope: SCOPES,
-            callback: (tokenResponse) => {
-                if (tokenResponse && tokenResponse.access_token) {
-                    accessToken = tokenResponse.access_token;
-                    ejecutarSubidaPendiente();
-                }
-            },
-        });
-        console.log("✅ Google Drive API inicializada correctamente");
-    } else {
-        console.log("⏳ Esperando a que carguen los servicios de Google...");
-        setTimeout(conectarConGoogle, 500);
-    }
-}
 function inicializarSistema() {
-    // Esta función llama a todos los renders por primera vez
     migrarBaseDeDatos();
-    guardarYRefrescar(); 
-    inicializarTema(); // Inicializamos el tema al cargar la página
-    inicializarEditorNotas(); // <--- ESTA ES LA LÍNEA QUE FALTABA
+    guardarYRefrescar();
+    inicializarTema();
+    inicializarEditorNotas();
     conectarConGoogle();
-    
-   
 }
 
 // --- MODO OSCURO ---

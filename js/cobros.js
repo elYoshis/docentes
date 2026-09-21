@@ -53,23 +53,26 @@ function renderCobros() {
   
 
   // Actualiza los Divs en la pantalla
-  document.getElementById("dash-atraso-txt").textContent =
-    `Bs. ${recAtraso.toFixed(2)} / ${periodoAct.metaAtraso}`;
-  document.getElementById("dash-actividad-txt").textContent =
-    `Bs. ${recActividad.toFixed(2)} / ${periodoAct.metaActividad}`;
+  // NUEVO: Definir la meta según la pestaña en la que estamos
+  const metaAtrasoActual = categoriaCobroActiva === 'medicina' 
+      ? (parseFloat(periodoAct.metaAtrasoMedicina) || 0) 
+      : (parseFloat(periodoAct.metaAtraso) || 0);
+  
+  const metaActividadActual = categoriaCobroActiva === 'medicina' 
+      ? 0 
+      : (parseFloat(periodoAct.metaActividad) || 0);
 
-  const porcAtraso =
-    periodoAct.metaAtraso > 0
-      ? (recAtraso / periodoAct.metaAtraso) * 100
-      : recAtraso > 0
-        ? 100
-        : 0;
-  const porcActividad =
-    periodoAct.metaActividad > 0
-      ? (recActividad / periodoAct.metaActividad) * 100
-      : recActividad > 0
-        ? 100
-        : 0;
+  // Actualiza los Divs en la pantalla
+  document.getElementById("dash-atraso-txt").textContent = `Bs. ${recAtraso.toFixed(2)} / ${metaAtrasoActual}`;
+  
+  if (categoriaCobroActiva === 'medicina') {
+      document.getElementById("dash-actividad-txt").textContent = `No aplica en Medicina`;
+  } else {
+      document.getElementById("dash-actividad-txt").textContent = `Bs. ${recActividad.toFixed(2)} / ${metaActividadActual}`;
+  }
+
+  const porcAtraso = metaAtrasoActual > 0 ? (recAtraso / metaAtrasoActual) * 100 : (recAtraso > 0 ? 100 : 0);
+  const porcActividad = metaActividadActual > 0 ? (recActividad / metaActividadActual) * 100 : (recActividad > 0 ? 100 : 0);
   // Conectar la base de datos con el nuevo editor Quill
   if (periodoAct && window.editorQuill) {
     window.editorQuill.root.innerHTML =
@@ -318,20 +321,34 @@ async function guardarCobro(e) {
   }
   // --------------------------------
 
- datos.cobros = datos.cobros.filter(
-    (c) => !(c.docenteId === dId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva)
+  const cobroExistente = datos.cobros.find(
+    (c) => c.docenteId === dId &&
+      c.periodoId === datos.periodoActivoId &&
+      (c.categoria || 'general') === categoriaCobroActiva,
   );
 
-  datos.cobros.push({
-    periodoId: datos.periodoActivoId,
-    categoria: categoriaCobroActiva,
-    docenteId: dId,
+  const datosCobro = {
     hojaRuta: document.getElementById("check-hoja-ruta").checked,
     atraso: parseFloat(document.getElementById("input-atraso").value) || 0,
     actividad: parseFloat(document.getElementById("input-actividad").value) || 0,
     observacion: document.getElementById("input-observacion").value.trim(),
-    linkRespaldo: linkRespaldo // Guardamos el link generado por Drive
-  });
+  };
+
+  if (cobroExistente) {
+    // Actualizar en el mismo lugar conserva el orden y los estados existentes.
+    Object.assign(cobroExistente, datosCobro);
+    if (linkRespaldo) cobroExistente.linkRespaldo = linkRespaldo;
+  } else {
+    datos.cobros.push({
+      periodoId: datos.periodoActivoId,
+      categoria: categoriaCobroActiva,
+      docenteId: dId,
+      ...datosCobro,
+      aprobado: false,
+      cancelado: false,
+      linkRespaldo,
+    });
+  }
   
   guardarYRefrescar();
   cerrarModal();
