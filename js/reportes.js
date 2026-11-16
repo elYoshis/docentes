@@ -2,23 +2,33 @@ function renderReporteGeneral() {
     const pId = parseInt(document.getElementById('selectPeriodoNav').value);
     const periodoAct = datos.periodos.find(p => p.id === pId);
     
-    if (!periodoAct) return;
+    if (!periodoAct) {
+        document.getElementById('rep-periodo-nombre').textContent = 'Reporte Mensual (sin periodo activo)';
+        document.getElementById('rep-txt-atrasos').textContent = 'Bs. 0.00';
+        document.getElementById('rep-txt-actividades').textContent = 'Bs. 0.00';
+        document.getElementById('lista-pendientes-body').innerHTML = '';
+        return;
+    }
 
     // 1. Mostrar Fecha Actual
     const hoy = new Date();
     const fechaLarga = hoy.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
     document.getElementById('rep-fecha-emision').textContent = `Generado el: ${fechaLarga}`;
-    document.getElementById('rep-periodo-nombre').textContent = `Corte: ${formatearFecha(periodoAct.fecha)}`;
+    document.getElementById('rep-periodo-nombre').textContent = `Corte: ${formatearFecha(periodoAct.fecha)} — ${periodoAct.categoria === 'medicina' ? 'Medicina' : 'General'}`;
 
     // 2. Cálculos de Montos (Solo suma lo aprobado)
     const cobrosMes = datos.cobros.filter(c => c.periodoId === periodoAct.id);
-    const totalAtrasos = cobrosMes.reduce((acc, c) => c.aprobado ? acc + (parseFloat(c.atraso) || 0) : acc, 0);
-    const totalActividades = cobrosMes.reduce((acc, c) => c.aprobado ? acc + (parseFloat(c.actividad) || 0) : acc, 0);
+    const totalAtrasos = cobrosMes.reduce((acc, c) => c.aprobado ? acc + numeroSeguro(c.atraso) : acc, 0);
+    const totalActividades = periodoAct.categoria === 'medicina'
+        ? 0
+        : cobrosMes.reduce((acc, c) => c.aprobado ? acc + numeroSeguro(c.actividad) : acc, 0);
 
     document.getElementById('rep-txt-atrasos').textContent = `Bs. ${totalAtrasos.toFixed(2)}`;
-    document.getElementById('rep-txt-actividades').textContent = `Bs. ${totalActividades.toFixed(2)}`;
+    document.getElementById('rep-txt-actividades').textContent = periodoAct.categoria === 'medicina'
+        ? 'No aplica en Medicina'
+        : `Bs. ${totalActividades.toFixed(2)}`;
 
-    // 3. Lista de Pendientes (Los que NO están aprobados)
+    // 3. Lista de movimientos pendientes de aprobación
     const deudoresDelMes = cobrosMes.filter(c => !c.aprobado);
 
     const tbody = document.getElementById('lista-pendientes-body');
@@ -26,15 +36,15 @@ function renderReporteGeneral() {
 
     if (deudoresDelMes.length === 0) {
         // Ajustamos el colspan a 5 porque ahora tenemos 5 columnas
-        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:15px; color:green;">✅ Todos están al día en este periodo</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:15px; color:green;">✅ Todos los movimientos están aprobados</td></tr>';
     } else {
         deudoresDelMes.forEach(c => {
             const d = datos.docentes.find(doc => doc.id === c.docenteId);
-            const nombreDisplay = d ? obtenerNombreCompleto(d) : "Docente no encontrado";
+            const nombreDisplay = escaparHTML(d ? obtenerNombreCompleto(d) : "Docente no encontrado");
 
             // Cálculos individuales para la fila
-            const montoAtraso = parseFloat(c.atraso) || 0;
-            const montoActividad = parseFloat(c.actividad) || 0;
+            const montoAtraso = numeroSeguro(c.atraso);
+            const montoActividad = periodoAct.categoria === 'medicina' ? 0 : numeroSeguro(c.actividad);
             const totalDeuda = montoAtraso + montoActividad;
 
             // Formateo visual (guion si es 0, monto si debe)
@@ -42,19 +52,22 @@ function renderReporteGeneral() {
             const txtActividad = montoActividad > 0 ? `Bs. ${montoActividad.toFixed(2)}` : "-";
 
             // Dibujamos la fila con las nuevas columnas
-           // Dibujamos la fila con las nuevas columnas
             tbody.innerHTML += `
                 <tr>
                     <td>${nombreDisplay}</td>
                     <td style="text-align: right; color: #555;">${txtAtraso}</td>
                     <td style="text-align: right; color: #555;">${txtActividad}</td>
                     <td style="text-align: right; font-weight: bold;">Bs. ${totalDeuda.toFixed(2)}</td>
-                    <td style="text-align: center;"><span class="badge badge-danger">⚠️ Pendiente</span></td>
+                    <td style="text-align: center;"><span class="badge badge-danger">⚠️ Pendiente de aprobación</span></td>
                 </tr>`;
         });
     }
 }
 function exportarExcel() {
+    if (typeof XLSX === 'undefined' || !XLSX.utils) {
+        return showToast("No se pudo cargar la librería para exportar a Excel", "error");
+    }
+
     const pId = parseInt(document.getElementById('selectPeriodoNav').value);
     const periodoAct = datos.periodos.find(p => p.id === pId);
     
@@ -70,8 +83,8 @@ function exportarExcel() {
         const doc = datos.docentes.find(d => d.id === c.docenteId);
         const nombre = doc ? obtenerNombreCompleto(doc) : "DOCENTE ELIMINADO";
         
-        const montoAtraso = parseFloat(c.atraso) || 0;
-        const montoActividad = parseFloat(c.actividad) || 0;
+        const montoAtraso = numeroSeguro(c.atraso);
+        const montoActividad = periodoAct.categoria === 'medicina' ? 0 : numeroSeguro(c.actividad);
         const total = montoAtraso + montoActividad;
 
         return {
@@ -81,7 +94,8 @@ function exportarExcel() {
             "Atraso (Bs)": montoAtraso,
             "Actividad (Bs)": montoActividad,
             "Total (Bs)": total,
-            "Estado de Pago": c.aprobado ? "PAGADO / APROBADO" : "PENDIENTE",
+            "Estado de Aprobación": c.aprobado ? "APROBADO" : "PENDIENTE",
+            "Estado de Pago": c.cancelado ? `PAGADO (${c.fechaCancelacion || "sin fecha"})` : "PENDIENTE DE PAGO",
             "Observaciones": c.observacion || "Sin observaciones"
         };
     });
@@ -90,18 +104,22 @@ function exportarExcel() {
     
     // Ajustar el ancho de las columnas de la Hoja 1
     wsDetalle['!cols'] = [
-        {wch: 5}, {wch: 35}, {wch: 15}, {wch: 12}, {wch: 12}, {wch: 12}, {wch: 22}, {wch: 40}
+        {wch: 5}, {wch: 35}, {wch: 15}, {wch: 12}, {wch: 12}, {wch: 12}, {wch: 24}, {wch: 25}, {wch: 40}
     ];
 
     // ==========================================
     // HOJA 2: RESUMEN FINANCIERO Y METAS
     // ==========================================
     // Calculamos los totales solo del dinero aprobado
-    const totalAtrasos = cobrosMes.reduce((acc, c) => c.aprobado ? acc + (parseFloat(c.atraso) || 0) : acc, 0);
-    const totalActividades = cobrosMes.reduce((acc, c) => c.aprobado ? acc + (parseFloat(c.actividad) || 0) : acc, 0);
+    const totalAtrasos = cobrosMes.reduce((acc, c) => c.aprobado ? acc + numeroSeguro(c.atraso) : acc, 0);
+    const totalActividades = periodoAct.categoria === 'medicina'
+        ? 0
+        : cobrosMes.reduce((acc, c) => c.aprobado ? acc + numeroSeguro(c.actividad) : acc, 0);
     
-    const metaAtraso = parseFloat(periodoAct.metaAtraso) || 0;
-    const metaActividad = parseFloat(periodoAct.metaActividad) || 0;
+    const metaAtraso = numeroSeguro(periodoAct.metaAtraso);
+    const metaActividad = periodoAct.categoria === 'medicina'
+        ? 0
+        : numeroSeguro(periodoAct.metaActividad);
 
     // Estructuramos el cuadro de resumen
     const dataResumen = [
@@ -113,13 +131,6 @@ function exportarExcel() {
             "Estado de la Meta": totalAtrasos >= metaAtraso && metaAtraso > 0 ? "✅ ALCANZADA" : "⚠️ DÉFICIT"
         },
         { 
-            "Concepto": "Recaudación por Actividades", 
-            "Meta Establecida (Bs)": metaActividad, 
-            "Total Recaudado (Bs)": totalActividades, 
-            "Diferencia (Bs)": totalActividades - metaActividad,
-            "Estado de la Meta": totalActividades >= metaActividad && metaActividad > 0 ? "✅ ALCANZADA" : "⚠️ DÉFICIT"
-        },
-        { 
             "Concepto": "TOTAL GLOBAL DEL MES", 
             "Meta Establecida (Bs)": metaAtraso + metaActividad, 
             "Total Recaudado (Bs)": totalAtrasos + totalActividades, 
@@ -127,6 +138,15 @@ function exportarExcel() {
             "Estado de la Meta": "-"
         }
     ];
+    if (periodoAct.categoria !== 'medicina') {
+        dataResumen.splice(1, 0, {
+            "Concepto": "Recaudación por Actividades",
+            "Meta Establecida (Bs)": metaActividad,
+            "Total Recaudado (Bs)": totalActividades,
+            "Diferencia (Bs)": totalActividades - metaActividad,
+            "Estado de la Meta": totalActividades >= metaActividad && metaActividad > 0 ? "✅ ALCANZADA" : "⚠️ DÉFICIT"
+        });
+    }
 
     const wsResumen = XLSX.utils.json_to_sheet(dataResumen);
     
@@ -145,12 +165,19 @@ function exportarExcel() {
     XLSX.utils.book_append_sheet(wb, wsDetalle, "Detalle de Cobros");
 
     // Descargamos el archivo con un nombre formal
-    XLSX.writeFile(wb, `Reporte_General_${periodoAct.fecha}.xlsx`);
+    XLSX.writeFile(wb, `Reporte_${periodoAct.categoria === 'medicina' ? 'Medicina' : 'General'}_${periodoAct.fecha}.xlsx`);
 }
 
 function exportarPDF() {
+    if (!window.jspdf || typeof window.jspdf.jsPDF !== 'function') {
+        return showToast("No se pudo cargar la librería para exportar a PDF", "error");
+    }
+
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
+    if (typeof doc.autoTable !== 'function') {
+        return showToast("No se pudo cargar el complemento para generar tablas PDF", "error");
+    }
     const pId = parseInt(document.getElementById('selectPeriodoNav').value);
     const periodoAct = datos.periodos.find(p => p.id === pId);
     
@@ -159,8 +186,10 @@ function exportarPDF() {
     const cobrosMes = datos.cobros.filter(c => c.periodoId === periodoAct.id);
     
     // Cálculos económicos solo para aprobados (lo que ya está en caja)
-    const totalAtrasos = cobrosMes.reduce((acc, c) => c.aprobado ? acc + (parseFloat(c.atraso) || 0) : acc, 0);
-    const totalActividades = cobrosMes.reduce((acc, c) => c.aprobado ? acc + (parseFloat(c.actividad) || 0) : acc, 0);
+    const totalAtrasos = cobrosMes.reduce((acc, c) => c.aprobado ? acc + numeroSeguro(c.atraso) : acc, 0);
+    const totalActividades = periodoAct.categoria === 'medicina'
+        ? 0
+        : cobrosMes.reduce((acc, c) => c.aprobado ? acc + numeroSeguro(c.actividad) : acc, 0);
     const hoy = new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' });
 
     doc.setFont("helvetica", "bold");
@@ -169,7 +198,7 @@ function exportarPDF() {
     
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.text(`Periodo Correspondiente: ${formatearFecha(periodoAct.fecha)}`, 14, 30);
+    doc.text(`Periodo Correspondiente: ${formatearFecha(periodoAct.fecha)} (${periodoAct.categoria === 'medicina' ? 'Medicina' : 'General'})`, 14, 30);
     doc.text(`Fecha de Emisión: ${hoy}`, 14, 35);
 
     doc.setFont("helvetica", "bold");
@@ -177,8 +206,16 @@ function exportarPDF() {
     doc.setFont("helvetica", "normal");
     doc.text(`En la fecha ${hoy}, se hace entrega formal de los montos recaudados:`, 14, 52);
     
-    doc.text(`- Monto por concepto de ACTIVIDADES:`, 20, 62);
-    doc.text(`Bs. ${totalActividades.toFixed(2)}`, 150, 62, { align: "right" });
+    doc.text(
+        periodoAct.categoria === 'medicina'
+            ? "- ACTIVIDADES: No aplica en Medicina"
+            : "- Monto por concepto de ACTIVIDADES:",
+        20,
+        62
+    );
+    if (periodoAct.categoria !== 'medicina') {
+        doc.text(`Bs. ${totalActividades.toFixed(2)}`, 150, 62, { align: "right" });
+    }
     
     doc.text(`- Monto por concepto de ATRASOS:`, 20, 69);
     doc.text(`Bs. ${totalAtrasos.toFixed(2)}`, 150, 69, { align: "right" });
@@ -191,15 +228,15 @@ function exportarPDF() {
     // --- SECCIÓN DE PENDIENTES MEJORADA ---
     const deudoresDelMes = cobrosMes.filter(c => !c.aprobado);
 
-    doc.text("DETALLE DE DOCENTES PENDIENTES DE PAGO:", 14, 95);
+    doc.text("DETALLE DE MOVIMIENTOS PENDIENTES DE APROBACIÓN:", 14, 95);
     
     // Mapeamos los datos extrayendo las multas individuales
     const tablaData = deudoresDelMes.map((c, i) => {
         const d = datos.docentes.find(doc => doc.id === c.docenteId);
         const nombre = d ? `${d.nombre} ${d.paterno} ${d.materno}`.toUpperCase() : "DOCENTE ELIMINADO";
         
-        const montoAtraso = parseFloat(c.atraso) || 0;
-        const montoActividad = parseFloat(c.actividad) || 0;
+        const montoAtraso = numeroSeguro(c.atraso);
+        const montoActividad = periodoAct.categoria === 'medicina' ? 0 : numeroSeguro(c.actividad);
         const totalDeuda = montoAtraso + montoActividad;
 
         return [
@@ -239,5 +276,5 @@ function exportarPDF() {
     doc.text("Firma Responsable", 65, finalY + 5, { align: "center" });
     doc.text("Firma Recibido", 145, finalY + 5, { align: "center" });
 
-    doc.save(`Acta_Recaudacion_${periodoAct.fecha}.pdf`);
+    doc.save(`Acta_Recaudacion_${periodoAct.categoria === 'medicina' ? 'Medicina' : 'General'}_${periodoAct.fecha}.pdf`);
 }

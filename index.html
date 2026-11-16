@@ -24,7 +24,7 @@
         </div>
         <div class="nav-tools">
             <div class="periodo-indicator">
-                <label>Periodo:</label>
+                <label id="label-periodo-nav">Periodo:</label>
                 <select id="selectPeriodoNav" onchange="cambiarPeriodoDesdeNav()">
                     <option value="">Cargando...</option>
                 </select>
@@ -97,7 +97,7 @@
                     <select id="filtro-estado" class="search-input filter-inline"
                         onchange="filtrarCobrosAvanzado()">
                         <option value="">Estado (Todos)</option>
-                        <option value="aprobado">✅ Aprobado / Pagado</option>
+                        <option value="aprobado">✅ Aprobado</option>
                         <option value="pendiente">⚠️ Pendiente</option>
                     </select>
 
@@ -124,7 +124,7 @@
                                 <div class="th-checkbox-wrap">
                                     <input type="checkbox" id="check-all-aprobado" onclick="toggleAllAprobado(event)"
                                         class="check-all-aprobado">
-                                    <span onclick="ordenarTabla(this, 8)" class="sort-label">Estado ↕</span>
+                                    <span onclick="ordenarTabla(this, 8)" class="sort-label">Aprobación ↕</span>
                                 </div>
                             </th>
                             <th onclick="ordenarTabla(this, 9)">Pago ↕</th>
@@ -141,19 +141,19 @@
         <section id="tab-docentes" class="tab-content">
             <div class="header-section header-vertical">
                 <h2>Directorio de Docentes</h2>
-                <form action="" style="width: 100%;">
+                <form action="" style="width: 100%;" onsubmit="agregarDocente(event)">
                     <div class="input-group grid-4-cols">
                         <input type="text" id="docNombre" placeholder="Nombre(s)" />
                         <input type="text" id="docPaterno" placeholder="Apellido Paterno" />
                         <input type="text" id="docMaterno" placeholder="Apellido Materno" />
-                        <button class="btn-success" onclick="agregarDocente()" type="submit">+ Agregar</button>
+                        <button class="btn-success" type="submit">+ Agregar</button>
                     </div>
                 </form>
             </div>
 
             <div class="search-container">
                 <input type="text" id="searchDocente" class="search-input"
-                    placeholder="🔍 Buscar por nombre, apellido o CI..."
+                    placeholder="🔍 Buscar por nombre o apellido..."
                     onkeyup="filtrarTabla('searchDocente', 'tabla-docentes-body')" />
             </div>
 
@@ -175,10 +175,15 @@
         <section id="tab-periodos" class="tab-content">
             <div class="header-section header-vertical">
                 <h2>Gestión de Periodos</h2>
+                <select id="nuevoPeriodoCategoria" class="form-input-clean" onchange="alternarCamposPeriodo()"
+                    style="max-width: 260px; margin-bottom: 10px;">
+                    <option value="general">🎓 General</option>
+                    <option value="medicina">⚕️ Medicina</option>
+                </select>
                 <div class="input-group grid-4-cols">
                     <input type="month" id="nuevoPeriodoFecha" />
-                    <input type="number" id="metaAtrasoInput" placeholder="Meta Atrasos (Bs)" />
-                    <input type="number" id="metaActividadInput" placeholder="Meta Actividades (Bs)" />
+                    <input type="number" id="metaAtrasoInput" placeholder="Meta Atrasos (Bs)" min="0" step="0.01" />
+                    <input type="number" id="metaActividadInput" placeholder="Meta Actividades (Bs)" min="0" step="0.01" />
                     <button class="btn-success" onclick="crearPeriodo()">Crear Periodo</button>
                 </div>
             </div>
@@ -219,7 +224,7 @@
             </div>
 
             <div class="pending-section">
-                <h3>⚠️ Docentes con Pagos Pendientes</h3>
+                <h3>⚠️ Movimientos pendientes de aprobación</h3>
                 <table class="table-minimal">
                     <thead>
                         <tr>
@@ -268,11 +273,11 @@
                     <label for="check-hoja-ruta"><b>Entregó Hoja de Ruta</b></label>
                 </div>
 
-                <label class="form-label">Multa Atraso (Bs):</label>
-                <input type="number" id="input-atraso" class="form-input-clean" value="0" step="0.01" />
+                <label class="form-label" for="input-atraso">Multa Atraso (Bs):</label>
+                <input type="number" id="input-atraso" class="form-input-clean" value="0" min="0" step="0.01" />
                 <div id="contenedor-actividad">
-                <label class="form-label">Multa Actividad (Bs):</label>
-                <input type="number" id="input-actividad" class="form-input-clean" value="0" step="0.01" />
+                    <label class="form-label" for="input-actividad">Multa Actividad (Bs):</label>
+                    <input type="number" id="input-actividad" class="form-input-clean" value="0" min="0" step="0.01" />
                 </div>
 
                 <label class="form-label">📄 Respaldo (Hoja de Ruta):</label>
@@ -312,7 +317,7 @@
                 periodo:</p>
 
             <input type="text" id="buscar-docente-modal" class="search-input" placeholder="🔍 Buscar por nombre..."
-                onkeyup="filtrarListaDocentesModal()" class="search-docente-modal">
+                onkeyup="filtrarListaDocentesModal()">
 
             <div id="lista-checkbox-docentes" class="docentes-list-checkboxes">
                 <!-- JS inyectará los checkboxes aquí -->
@@ -427,9 +432,6 @@
     <script src="js/cobros.js"></script>
     <script src="js/reportes.js"></script>
     <script src="js/app.js"></script>
-
-    <!-- Si decides mantener todo en un solo archivo JS por ahora, borra las 6 líneas de arriba y usa esta: -->
-    <!-- <script src="script.js"></script> -->
 
 </body>
 

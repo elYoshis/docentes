@@ -1,4 +1,3 @@
-
 let docenteEnEdicion = null;
 
 function renderDocentes() {
@@ -16,19 +15,19 @@ function renderDocentes() {
     tbody.innerHTML = docentesOrdenados.map((doc, index) => `
         <tr>
             <td>${index + 1}</td>
-            <td>${normalizarTexto(doc.paterno)}</td>
-            <td>${normalizarTexto(doc.materno || '')}</td>
-            <td>${normalizarTexto(doc.nombre)}</td>
+            <td>${escaparHTML(normalizarTexto(doc.paterno))}</td>
+            <td>${escaparHTML(normalizarTexto(doc.materno || ''))}</td>
+            <td>${escaparHTML(normalizarTexto(doc.nombre))}</td>
             <td>
-                <button class="btn-primary" style="background-color: #3b82f6; padding: 5px 10px; margin-right: 5px;" onclick="abrirModalHistorial(${doc.id})">👁️ Historial</button>
-                <button onclick="abrirModalEditar(${doc.id})" class="btn-edit">✏️ Editar</button>
-                <button class="btn-delete" onclick="borrarDocente(${doc.id})">🗑️</button>
+                <button class="btn-primary" style="background-color: #3b82f6; padding: 5px 10px; margin-right: 5px;" onclick="abrirModalHistorial(${Number(doc.id)})">👁️ Historial</button>
+                <button onclick="abrirModalEditar(${Number(doc.id)})" class="btn-edit">✏️ Editar</button>
+                <button class="btn-delete" onclick="borrarDocente(${Number(doc.id)})">🗑️</button>
             </td>
         </tr>
     `).join('');
 }
 
-function agregarDocente() {
+function agregarDocente(event) {
     if (event) event.preventDefault();
 
     const nom = document.getElementById('docNombre').value.trim();
@@ -115,22 +114,29 @@ function guardarEdicion() {
 
 
 function editarDocente(id) {
-    const doc = datos.docentes.find(d => d.id === id);
+    const doc = datos.docentes.find(d => Number(d.id) === Number(id));
+    if (!doc) return;
     const nPat = prompt("Apellido Paterno:", doc.paterno);
+    if (nPat === null) return;
     const nMat = prompt("Apellido Materno:", doc.materno);
+    if (nMat === null) return;
     const nNom = prompt("Nombre(s):", doc.nombre);
+    if (nNom === null) return;
 
-    if (nPat !== null && nNom !== null) {
-        doc.paterno = nPat;
-        doc.materno = nMat || "";
-        doc.nombre = nNom;
-        guardarYRefrescar();
+    if (!nPat.trim() || !nNom.trim()) {
+        showToast("Nombre y Apellido Paterno son obligatorios", "error");
+        return;
     }
+
+    doc.paterno = nPat.trim();
+    doc.materno = nMat.trim();
+    doc.nombre = nNom.trim();
+    guardarYRefrescar();
 }
 
 function borrarDocente(id) {
     if (confirm("¿Eliminar docente? Sus registros de cobro históricos se mantendrán.")) {
-        datos.docentes = datos.docentes.filter(d => d.id !== id);
+        datos.docentes = datos.docentes.filter(d => Number(d.id) !== Number(id));
         guardarYRefrescar();
     }
 }
@@ -182,14 +188,14 @@ function actualizarIconosSort() {
 }
 
 function abrirModalHistorial(docenteId) {
-    const docente = datos.docentes.find(d => d.id === docenteId);
+    const docente = datos.docentes.find(d => Number(d.id) === Number(docenteId));
     if (!docente) return;
 
     // 1. Mostrar el nombre del docente
     document.getElementById('historial-nombre').textContent = obtenerNombreCompleto(docente);
 
     // 2. Filtrar todos los cobros donde aparezca este docente
-    const cobrosDocente = datos.cobros.filter(c => c.docenteId === docenteId);
+    const cobrosDocente = datos.cobros.filter(c => Number(c.docenteId) === Number(docenteId));
     
     let totalPagado = 0;
     let totalDeuda = 0;
@@ -201,14 +207,19 @@ function abrirModalHistorial(docenteId) {
     } else {
         // 3. Recorrer sus registros y sumar los montos
         cobrosDocente.forEach(c => {
-            const periodo = datos.periodos.find(p => p.id === c.periodoId);
-            const nombrePeriodo = periodo ? formatearFecha(periodo.fecha) : "Periodo Desconocido";
+            const periodo = datos.periodos.find(p => Number(p.id) === Number(c.periodoId));
+            const categoriaPeriodo = periodo && periodo.categoria === 'medicina' ? 'Medicina' : 'General';
+            const nombrePeriodo = periodo
+                ? `${formatearFecha(periodo.fecha)} (${categoriaPeriodo})`
+                : "Periodo Desconocido";
             
-            const atraso = parseFloat(c.atraso) || 0;
-            const actividad = parseFloat(c.actividad) || 0;
+            const atraso = numeroSeguro(c.atraso);
+            const actividad = periodo && periodo.categoria === 'medicina'
+                ? 0
+                : numeroSeguro(c.actividad);
             const totalMes = atraso + actividad;
 
-            if (c.aprobado) {
+            if (c.cancelado) {
                 totalPagado += totalMes;
             } else {
                 totalDeuda += totalMes;
@@ -217,13 +228,13 @@ function abrirModalHistorial(docenteId) {
             // 4. Dibujar la fila del historial
             tbody.innerHTML += `
                 <tr>
-                    <td><b>${nombrePeriodo}</b></td>
+                    <td><b>${escaparHTML(nombrePeriodo)}</b></td>
                     <td style="text-align: right;">Bs. ${atraso.toFixed(2)}</td>
                     <td style="text-align: right;">Bs. ${actividad.toFixed(2)}</td>
                     <td style="text-align: center;">
-    ${c.aprobado 
-        ? '<span class="badge badge-success">✅ Pagado</span>' 
-        : '<span class="badge badge-warning">⚠️ Pendiente</span>'}
+    ${c.cancelado
+        ? '<span class="badge badge-success">✅ Pagado</span>'
+        : '<span class="badge badge-warning">⚠️ No pagado</span>'}
 </td>
                 </tr>`;
         });

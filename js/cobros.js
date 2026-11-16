@@ -1,17 +1,23 @@
 let categoriaCobroActiva = 'general';
 
-function cambiarCategoriaCobro(categoria) {
+// Cambia la categoría en pantalla (sin refrescar)
+function aplicarCategoriaCobro(categoria) {
     categoriaCobroActiva = categoria;
-    
+    sincronizarPeriodoActivo();
+
     // Cambiar estilos de los botones
     document.getElementById('btn-tab-general').classList.toggle('active', categoria === 'general');
     document.getElementById('btn-tab-medicina').classList.toggle('active', categoria === 'medicina');
-    
+
     // Ocultar/Mostrar la cabecera de Actividad en la tabla
     const thAct = document.getElementById('th-actividad');
     if (thAct) thAct.style.display = (categoria === 'medicina') ? 'none' : '';
-    
-    renderCobros();
+}
+
+// Al cambiar de pestaña General/Medicina cambia también el periodo activo, el selector y el reporte
+function cambiarCategoriaCobro(categoria) {
+    aplicarCategoriaCobro(categoria);
+    guardarYRefrescar();
 }
 function renderCobros() {
   const tbody = document.getElementById("tabla-cobros-body");
@@ -23,6 +29,13 @@ function renderCobros() {
 
   if (!periodoAct) {
     container.style.display = "none";
+    alerta.textContent = categoriaCobroActiva === 'medicina'
+      ? "⚠️ No hay un periodo activo de Medicina. Créalo o actívalo en la pestaña Periodos."
+      : "⚠️ No hay un periodo activo General. Créalo o actívalo en la pestaña Periodos.";
+    document.getElementById("dash-atraso-txt").textContent = "Bs. 0 / 0";
+    document.getElementById("dash-actividad-txt").textContent = "Bs. 0 / 0";
+    document.getElementById("bar-atraso").style.width = "0%";
+    document.getElementById("bar-actividad").style.width = "0%";
     alerta.style.display = "block";
     return;
   }
@@ -42,11 +55,11 @@ function renderCobros() {
  
   // LÓGICA DEL DASHBOARD (Se calcula sumando SOLO si el checkbox está aprobado)
   const recAtraso = cobrosDelMes.reduce(
-    (acc, c) => (c.aprobado ? acc + (parseFloat(c.atraso) || 0) : acc),
+    (acc, c) => (c.aprobado ? acc + numeroSeguro(c.atraso) : acc),
     0,
   );
-  const recActividad = cobrosDelMes.reduce(
-    (acc, c) => (c.aprobado ? acc + (parseFloat(c.actividad) || 0) : acc),
+  const recActividad = categoriaCobroActiva === 'medicina' ? 0 : cobrosDelMes.reduce(
+    (acc, c) => (c.aprobado ? acc + numeroSeguro(c.actividad) : acc),
     0,
   );
 
@@ -54,13 +67,11 @@ function renderCobros() {
 
   // Actualiza los Divs en la pantalla
   // NUEVO: Definir la meta según la pestaña en la que estamos
-  const metaAtrasoActual = categoriaCobroActiva === 'medicina' 
-      ? (parseFloat(periodoAct.metaAtrasoMedicina) || 0) 
-      : (parseFloat(periodoAct.metaAtraso) || 0);
+  const metaAtrasoActual = numeroSeguro(periodoAct.metaAtraso);
   
   const metaActividadActual = categoriaCobroActiva === 'medicina' 
       ? 0 
-      : (parseFloat(periodoAct.metaActividad) || 0);
+      : numeroSeguro(periodoAct.metaActividad);
 
   // Actualiza los Divs en la pantalla
   document.getElementById("dash-atraso-txt").textContent = `Bs. ${recAtraso.toFixed(2)} / ${metaAtrasoActual}`;
@@ -75,8 +86,8 @@ function renderCobros() {
   const porcActividad = metaActividadActual > 0 ? (recActividad / metaActividadActual) * 100 : (recActividad > 0 ? 100 : 0);
   // Conectar la base de datos con el nuevo editor Quill
   if (periodoAct && window.editorQuill) {
-    window.editorQuill.root.innerHTML =
-      periodoAct.notaGeneral || periodoAct.notas || "";
+    const nota = periodoAct.notaGeneral || periodoAct.notas || "";
+    window.editorQuill.setContents(window.editorQuill.clipboard.convert(nota), 'silent');
   }
 
   document.getElementById("bar-atraso").style.width =
@@ -93,20 +104,22 @@ function renderCobros() {
 
   // 5. RENDERIZAR TABLA (Con columnas separadas)
   if (cobrosDelMes.length === 0) {
-    const colSpan = categoriaCobroActiva === 'medicina' ? 11 : 12;
+    const colSpan = categoriaCobroActiva === 'medicina' ? 10 : 11;
     tbody.innerHTML = `<tr><td colspan="${colSpan}" style="text-align:center; color: #999; padding: 20px;">No hay registros de cobro para este mes en esta categoría.</td></tr>`;
     return;
   }
 
   cobrosDelMes.forEach((c, index) => {
-    const doc = datos.docentes.find((d) => d.id === c.docenteId);
+    const doc = datos.docentes.find((d) => Number(d.id) === Number(c.docenteId));
 
-    const paterno = doc ? doc.paterno.toUpperCase() : "-";
-    const materno = doc ? (doc.materno || "").toUpperCase() : "-";
-    const nombre = doc ? doc.nombre.toUpperCase() : "ELIMINADO";
+    const paterno = doc ? escaparHTML(normalizarTexto(doc.paterno)) : "-";
+    const materno = doc ? escaparHTML(normalizarTexto(doc.materno || "")) : "-";
+    const nombre = doc ? escaparHTML(normalizarTexto(doc.nombre)) : "ELIMINADO";
     const ocultarAct = categoriaCobroActiva === 'medicina' ? 'style="display:none;"' : '';
-    const valAct = categoriaCobroActiva === 'medicina' ? 0 : (parseFloat(c.actividad) || 0);
-    const total = (parseFloat(c.atraso) || 0) + valAct;
+    const atraso = numeroSeguro(c.atraso);
+    const valAct = categoriaCobroActiva === 'medicina' ? 0 : numeroSeguro(c.actividad);
+    const total = atraso + valAct;
+    const docenteId = Number(c.docenteId);
 
     const celdaAprobado = `
             <div style="text-align: center;">
@@ -115,34 +128,35 @@ function renderCobros() {
                        onclick="toggleAprobado(${c.docenteId})">
             </div>`;
 
-    const hoy = new Date().toISOString().split("T")[0];
+    const hoy = fechaLocalISO();
     let celdaPago = "";
 
     if (c.cancelado) {
       celdaPago = `
                 <div class="estado-pagado">
                     <span class="badge badge-success">✅ Pagado</span>
-                    <span class="fecha-pagado-texto">${c.fechaCancelacion}</span>
-                    <button onclick="cambiarEstadoPago(${c.docenteId}, false)" class="btn-deshacer">Deshacer</button>
+                    <span class="fecha-pagado-texto">${escaparHTML(c.fechaCancelacion || '')}</span>
+                    <button onclick="cambiarEstadoPago(${docenteId}, false)" class="btn-deshacer">Deshacer</button>
                 </div>`;
     } else {
       celdaPago = `
                 <div class="celda-pago-container">
                     <input type="date" id="fecha-pago-${c.docenteId}" value="${hoy}" class="input-fecha-pago">
-                    <button onclick="cambiarEstadoPago(${c.docenteId}, true)" class="btn-pagar">Pagar</button>
+                    <button onclick="cambiarEstadoPago(${docenteId}, true)" class="btn-pagar">Pagar</button>
                 </div>`;
     }
     let celdaRuta = "❌";
-    if (c.linkRespaldo) {
+    const linkRespaldo = urlSegura(c.linkRespaldo);
+    if (linkRespaldo) {
         // Si hay link, mostramos un botón clickeable para abrir la imagen
-        celdaRuta = `<a href="${c.linkRespaldo}" target="_blank" title="Ver Respaldo en Drive" style="text-decoration: none; font-size: 1.2rem; cursor: pointer;">🖼️</a>`;
+        celdaRuta = `<a href="${escaparHTML(linkRespaldo)}" target="_blank" rel="noopener noreferrer" title="Ver Respaldo en Drive" style="text-decoration: none; font-size: 1.2rem; cursor: pointer;">🖼️</a>`;
     } else if (c.hojaRuta) {
         // Si solo se marcó el check pero no se subió archivo
         celdaRuta = "✅";
     }
     // Fila sin la columna final de acciones; las acciones están flotando en el nombre
     tbody.innerHTML += `
-            <tr data-estado="${c.aprobado ? "aprobado" : "pendiente"}" 
+            <tr data-estado="${c.aprobado ? "aprobado" : "pendiente"}"
                 data-ruta="${c.hojaRuta ? "entregada" : "falta"}">
                 <td>${index + 1}</td>
                 <td>${paterno}</td>
@@ -151,26 +165,31 @@ function renderCobros() {
                     <div class="name-bubble-container">
                         <span>${nombre}</span>
                         <div class="btn-historial-bubble">
-                            <button class="btn-bubble-action" onclick="abrirModalHistorial(${c.docenteId})" title="Ver Historial">👁️</button>
-                            <button class="btn-bubble-action" onclick="abrirModalCobro(${c.docenteId})" title="Editar Movimiento">✏️</button>
-                            <button class="btn-bubble-action" onclick="borrarCobro(${c.docenteId})" title="Eliminar Registro">🗑️</button>
+                            <button class="btn-bubble-action" onclick="abrirModalHistorial(${docenteId})" title="Ver Historial">👁️</button>
+                            <button class="btn-bubble-action" onclick="abrirModalCobro(${docenteId})" title="Editar Movimiento">✏️</button>
+                            <button class="btn-bubble-action" onclick="borrarCobro(${docenteId})" title="Eliminar Registro">🗑️</button>
                         </div>
                     </div>
                 </td>
                 <td style="text-align:center">${celdaRuta}</td>
-                <td>Bs. ${c.atraso.toFixed(2)}</td>
+                <td>Bs. ${atraso.toFixed(2)}</td>
                 <td ${ocultarAct}>Bs. ${valAct.toFixed(2)}</td>
                 <td><b>Bs. ${total.toFixed(2)}</b></td>
                 <td>${celdaAprobado}</td>
                 <td>${celdaPago}</td>
-                <td><small style="color: #666;">${c.observacion || ""}</small></td>
+                <td><small style="color: #666;">${escaparHTML(c.observacion || "")}</small></td>
             </tr>`;
   });
 }
 
 function cambiarEstadoPago(docenteId, marcarComoPagado) {
+  if (!datos.periodoActivoId) {
+    showToast("Selecciona un periodo activo antes de registrar pagos", "error");
+    return;
+  }
+
   const cobro = datos.cobros.find(
-    (c) => c.docenteId === docenteId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
+    (c) => Number(c.docenteId) === Number(docenteId) && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
   );
   if (!cobro) return;
 
@@ -193,8 +212,10 @@ function cambiarEstadoPago(docenteId, marcarComoPagado) {
 }
 
 function toggleAprobado(docenteId) {
+  if (!datos.periodoActivoId) return;
+
   const cobro = datos.cobros.find(
-    (c) => c.docenteId === docenteId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
+    (c) => Number(c.docenteId) === Number(docenteId) && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
   );
 
   if (cobro) {
@@ -220,6 +241,8 @@ function toggleAprobado(docenteId) {
 
 function toggleAllAprobado(event) {
   if (event) event.stopPropagation();
+  if (!datos.periodoActivoId) return;
+
   const estadoGlobal = document.getElementById("check-all-aprobado").checked;
   // Se añade el filtro de categoría aquí:
   const cobrosDelMes = datos.cobros.filter(
@@ -244,21 +267,20 @@ function toggleAllAprobado(event) {
 }
 
 function abrirModalCobro(docenteId = null) {
+  if (!datos.periodoActivoId) {
+    showToast("Selecciona o crea un periodo activo antes de registrar cobros", "error");
+    return;
+  }
+
   const select = document.getElementById("select-docente-cobro");
   select.innerHTML = '<option value="">Seleccione Docente...</option>';
   document.getElementById("contenedor-actividad").style.display = categoriaCobroActiva === 'medicina' ? 'none' : 'block';
-
-  const cobroExistente = datos.cobros.find(c => 
-      c.docenteId === docenteId && 
-      c.periodoId === datos.periodoActivoId && 
-      (c.categoria || 'general') === categoriaCobroActiva
-  );
 
   const docentesOrdenados = [...datos.docentes].sort((a, b) =>
     a.paterno.localeCompare(b.paterno),
   );
   docentesOrdenados.forEach((d) => {
-    select.innerHTML += `<option value="${d.id}">${obtenerNombreCompleto(d)}</option>`;
+    select.innerHTML += `<option value="${Number(d.id)}">${escaparHTML(obtenerNombreCompleto(d))}</option>`;
   });
 
   if (!docenteId) {
@@ -276,12 +298,16 @@ function abrirModalCobro(docenteId = null) {
     // Si enviamos docenteId (estamos editando un registro existente del mes)
     // Si enviamos docenteId (estamos editando un registro existente del mes)
     const c = datos.cobros.find(
-      (cob) => cob.docenteId === docenteId && cob.periodoId === datos.periodoActivoId && (cob.categoria || 'general') === categoriaCobroActiva
+      (cob) => Number(cob.docenteId) === Number(docenteId) && cob.periodoId === datos.periodoActivoId && (cob.categoria || 'general') === categoriaCobroActiva
     );
+    if (!c) {
+      showToast("No se encontró el cobro que deseas editar", "error");
+      return;
+    }
     document.getElementById("select-docente-cobro").value = docenteId;
     document.getElementById("check-hoja-ruta").checked = c.hojaRuta;
-    document.getElementById("input-atraso").value = c.atraso;
-    document.getElementById("input-actividad").value = c.actividad;
+    document.getElementById("input-atraso").value = numeroSeguro(c.atraso);
+    document.getElementById("input-actividad").value = categoriaCobroActiva === 'medicina' ? 0 : numeroSeguro(c.actividad);
     document.getElementById("modal-titulo").textContent = "Editar Registro";
     document.getElementById("input-observacion").value = c.observacion || "";
   }
@@ -295,8 +321,27 @@ function cerrarModal() {
 
 async function guardarCobro(e) {
   e.preventDefault();
-  const dId = parseInt(document.getElementById("select-docente-cobro").value);
-  if (!dId) return;
+  if (!datos.periodoActivoId) {
+    showToast("Selecciona o crea un periodo activo antes de registrar cobros", "error");
+    return;
+  }
+
+  const dId = Number(document.getElementById("select-docente-cobro").value);
+  if (!Number.isInteger(dId) || dId <= 0) {
+    showToast("Selecciona un docente para registrar el cobro", "error");
+    return;
+  }
+
+  const atrasoInput = document.getElementById("input-atraso").value;
+  const actividadInput = document.getElementById("input-actividad").value;
+  const atraso = atrasoInput === '' ? 0 : Number(atrasoInput);
+  const actividad = categoriaCobroActiva === 'medicina' || actividadInput === ''
+    ? 0
+    : Number(actividadInput);
+  if (!Number.isFinite(atraso) || atraso < 0 || !Number.isFinite(actividad) || actividad < 0) {
+    showToast("Las multas deben ser montos válidos iguales o mayores a cero", "error");
+    return;
+  }
 
   // --- LÓGICA DE SUBIDA A DRIVE Y CARPETAS ---
   const btnGuardar = e.target.querySelector('button[type="submit"]');
@@ -304,33 +349,41 @@ async function guardarCobro(e) {
   let linkRespaldo = null;
 
   // Obtenemos los datos del docente para armar el nombre de su carpeta
-  const docente = datos.docentes.find((d) => d.id === dId);
+  const docente = datos.docentes.find((d) => Number(d.id) === dId);
   // Ejemplo: "CORTEZ JOSE"
   const nombreCarpetaDocente = docente ? `${docente.paterno} ${docente.nombre}`.toUpperCase() : "DESCONOCIDO";
 
   // Si el usuario seleccionó un archivo, bloqueamos el botón y lo subimos
-  if (fileInput.files.length > 0) {
-      btnGuardar.innerText = "Subiendo y organizando... ⏳";
-      btnGuardar.disabled = true;
-      
-      // Enviamos el archivo Y el nombre del docente a Drive
-      linkRespaldo = await subirArchivoADrive(fileInput.files[0], nombreCarpetaDocente);
-      
-      btnGuardar.innerText = "Guardar";
-      btnGuardar.disabled = false;
+  if (fileInput && fileInput.files.length > 0) {
+      if (btnGuardar) {
+          btnGuardar.innerText = "Subiendo y organizando... ⏳";
+          btnGuardar.disabled = true;
+      }
+      try {
+          linkRespaldo = await subirArchivoADrive(fileInput.files[0], nombreCarpetaDocente);
+      } catch (error) {
+          console.error("Error al subir el respaldo:", error);
+          showToast("No se pudo subir el respaldo. El cobro no se guardó.", "error");
+          return;
+      } finally {
+          if (btnGuardar) {
+              btnGuardar.innerText = "Guardar";
+              btnGuardar.disabled = false;
+          }
+      }
   }
   // --------------------------------
 
   const cobroExistente = datos.cobros.find(
-    (c) => c.docenteId === dId &&
+    (c) => Number(c.docenteId) === dId &&
       c.periodoId === datos.periodoActivoId &&
       (c.categoria || 'general') === categoriaCobroActiva,
   );
 
   const datosCobro = {
     hojaRuta: document.getElementById("check-hoja-ruta").checked,
-    atraso: parseFloat(document.getElementById("input-atraso").value) || 0,
-    actividad: parseFloat(document.getElementById("input-actividad").value) || 0,
+    atraso,
+    actividad,
     observacion: document.getElementById("input-observacion").value.trim(),
   };
 
@@ -363,7 +416,7 @@ function limpiarSeleccionArchivo() {
 }
 function borrarCobro(docenteId) {
   datos.cobros = datos.cobros.filter(
-    (c) => !(c.docenteId === docenteId && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva)
+    (c) => !(Number(c.docenteId) === Number(docenteId) && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva)
   );
   guardarYRefrescar();
 }
@@ -387,15 +440,15 @@ function abrirModalSeleccionMasiva() {
   docentesOrdenados.forEach((doc) => {
     // Solo mostramos a los docentes que NO están ya agregados en este mes
    const existe = datos.cobros.some(
-      (c) => c.docenteId === doc.id && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
+     (c) => Number(c.docenteId) === Number(doc.id) && c.periodoId === datos.periodoActivoId && (c.categoria || 'general') === categoriaCobroActiva
     );
 
     if (!existe) {
       const nombreCompleto = obtenerNombreCompleto(doc);
       contenedor.innerHTML += `
                 <label style="display: flex; align-items: center; gap: 10px; padding: 10px; background: #f8f9fa; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; transition: background 0.2s;">
-                    <input type="checkbox" class="check-docente-masivo" value="${doc.id}" style="width: auto; margin: 0;">
-                    ${nombreCompleto}
+                    <input type="checkbox" class="check-docente-masivo" value="${Number(doc.id)}" style="width: auto; margin: 0;">
+                    ${escaparHTML(nombreCompleto)}
                 </label>
             `;
       disponibles++;
@@ -418,12 +471,18 @@ function cerrarModalSeleccion() {
 }
 
 function guardarDocentesSeleccionados() {
+  if (!datos.periodoActivoId) {
+    showToast("Selecciona un periodo activo antes de cargar docentes", "error");
+    return;
+  }
+
   // Capturamos todos los checkboxes que el usuario haya marcado
   const checkboxes = document.querySelectorAll(".check-docente-masivo:checked");
   let agregados = 0;
 
   checkboxes.forEach((chk) => {
-    const docId = parseInt(chk.value);
+    const docId = Number(chk.value);
+    if (!Number.isInteger(docId) || docId <= 0) return;
 
     datos.cobros.push({
       periodoId: datos.periodoActivoId,

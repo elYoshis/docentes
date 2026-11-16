@@ -21,27 +21,31 @@ SisCobro es una aplicación web ligera para controlar pagos, consultar el estado
 
 ## Demo
 
-Puedes abrir la aplicación directamente en el navegador:
+Puedes ejecutar la aplicación sin entrar al modo desarrollador:
 
-1. Clona o descarga este repositorio.
-2. Abre `index.html`.
-3. Comienza creando un periodo y registrando docentes y pagos.
+1. Descarga o copia la carpeta completa `docentes`.
+2. Haz doble clic en `Iniciar SisCobro.bat`.
+3. La aplicación se abrirá en el navegador predeterminado.
 
-También puedes ejecutar el proyecto con un servidor local:
+También puedes abrir `index.html` directamente, aunque el lanzador es el método recomendado porque inicia la aplicación mediante un servidor local.
+
+### Ejecución manual
+
+Si necesitas iniciar el servidor manualmente:
 
 ```bash
-python -m http.server 8000
+python -m http.server 5000 --bind 127.0.0.1
 ```
 
-Luego visita: http://localhost:8000
+Luego visita: http://127.0.0.1:5000
 
 ## Estructura del proyecto
 
 ```text
 .
+├── Iniciar SisCobro.bat
 ├── index.html
 ├── style.css
-├── script.js
 ├── js/
 │   ├── app.js
 │   ├── db.js
@@ -49,9 +53,7 @@ Luego visita: http://localhost:8000
 │   ├── periodos.js
 │   ├── cobros.js
 │   └── reportes.js
-├── doc.py
 ├── README.md
-└── LICENSE
 ```
 
 ## Tecnologías
@@ -64,7 +66,8 @@ Luego visita: http://localhost:8000
 - Quill
 - jsPDF
 - SheetJS
-- Python (opcional para `doc.py`)
+
+La aplicación no requiere Node.js ni un proceso de compilación. Solo necesita Python instalado para utilizar `Iniciar SisCobro.bat`.
 
 ## Datos y respaldo
 
