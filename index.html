@@ -13,7 +13,7 @@
 <body>
     <!-- NAVEGACIÓN -->
     <nav class="navbar">
-        <div class="logo">💰 SisCobro</div>
+        <div class="logo" id="easter-egg-trigger" role="button" tabindex="0" aria-label="SisCobro">💰 SisCobro</div>
         <div class="nav-links">
             <button onclick="cambiarPestana('tab-cobros')" id="btn-tab-cobros" class="active">Planilla de
                 Cobros</button>
@@ -41,99 +41,103 @@
         <!-- PESTAÑA: COBROS -->
         <section id="tab-cobros" class="tab-content active-tab">
             <div class="header-section header-vertical">
-        <h2>Control de Cobros Diarios</h2>
-        
-        <!-- NUEVO: Pestañas Internas -->
-        <div class="subtabs">
-            <button id="btn-tab-general" class="btn-internal active" onclick="cambiarCategoriaCobro('general')">🎓 General</button>
-            <button id="btn-tab-medicina" class="btn-internal" onclick="cambiarCategoriaCobro('medicina')">⚕️ Medicina</button>
-        </div>
+                <h2>Control de Cobros Diarios</h2>
 
-        <div class="input-group toolbar-actions">
-                <div class="button-row">
-                    <button class="btn-success" onclick="abrirModalSeleccionMasiva()">👥 Cargar Docentes
-                        (Selección)</button>
-                    <button class="btn-primary" onclick="abrirModalCobro()">+ Registrar Pago Manual</button>
+                <!-- NUEVO: Pestañas Internas -->
+                <div class="subtabs">
+                    <button id="btn-tab-general" class="btn-internal active"
+                        onclick="cambiarCategoriaCobro('general')">🎓 General</button>
+                    <button id="btn-tab-medicina" class="btn-internal" onclick="cambiarCategoriaCobro('medicina')">⚕️
+                        Medicina</button>
                 </div>
-            </div>
 
-            <div id="dashboard-metas" class="dashboard">
-                <div class="dash-card atraso">
-                    <h4>Atrasos</h4>
-                    <p id="dash-atraso-txt">Bs. 0 / 0</p>
-                    <div class="progress-bar">
-                        <div id="bar-atraso" class="progress-atraso"></div>
+                <div class="input-group toolbar-actions">
+                    <div class="button-row">
+                        <button class="btn-success" onclick="abrirModalSeleccionMasiva()">👥 Cargar Docentes
+                            (Selección)</button>
+                        <button class="btn-primary" onclick="abrirModalCobro()">+ Registrar Pago Manual</button>
                     </div>
                 </div>
-                <div class="dash-card actividad">
-                    <h4>Actividades</h4>
-                    <p id="dash-actividad-txt">Bs. 0 / 0</p>
-                    <div class="progress-bar">
-                        <div id="bar-actividad" class="progress-activity"></div>
+
+
+                <div id="dashboard-metas" class="dashboard">
+                    <div class="dash-card atraso">
+                        <h4>Atrasos</h4>
+                        <p id="dash-atraso-txt">Bs. 0 / 0</p>
+                        <div class="progress-bar">
+                            <div id="bar-atraso" class="progress-atraso"></div>
+                        </div>
+                    </div>
+                    <div class="dash-card actividad">
+                        <h4>Actividades</h4>
+                        <p id="dash-actividad-txt">Bs. 0 / 0</p>
+                        <div class="progress-bar">
+                            <div id="bar-actividad" class="progress-activity"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="alerta-sin-periodo" class="alerta">
-                ⚠️ Selecciona un periodo activo para trabajar.
-            </div>
+                <div id="alerta-sin-periodo" class="alerta">
+                    ⚠️ Selecciona un periodo activo para trabajar.
+                </div>
 
-            <div id="tabla-container">
-                <div class="general-notes-container">
-                    <div class="notes-toolbar">
-                        <h4>📝 Notas Generales del Periodo</h4>
-                        <button onclick="guardarNotaGeneral()" class="btn-success btn-small">💾 Guardar Nota</button>
+                <div id="tabla-container">
+                    <div class="general-notes-container">
+                        <div class="notes-toolbar">
+                            <h4>📝 Notas Generales del Periodo</h4>
+                            <button onclick="guardarNotaGeneral()" class="btn-success btn-small">💾 Guardar
+                                Nota</button>
+                        </div>
+
+                        <!-- Quill necesita que sea un DIV y no un TEXTAREA -->
+                        <div id="editor-nota-general" class="editor-nota-general"></div>
                     </div>
 
-                    <!-- Quill necesita que sea un DIV y no un TEXTAREA -->
-                    <div id="editor-nota-general" class="editor-nota-general"></div>
+                    <div class="filter-group">
+                        <input type="text" id="search-cobro" class="search-input search-cobro"
+                            placeholder="🔍 Buscar por nombre, apellido, monto o nota..."
+                            onkeyup="filtrarCobrosAvanzado()" />
+
+                        <select id="filtro-estado" class="search-input filter-inline"
+                            onchange="filtrarCobrosAvanzado()">
+                            <option value="">Estado (Todos)</option>
+                            <option value="aprobado">✅ Aprobado</option>
+                            <option value="pendiente">⚠️ Pendiente</option>
+                        </select>
+
+                        <select id="filtro-ruta" class="search-input filter-inline" onchange="filtrarCobrosAvanzado()">
+                            <option value="">Hoja de Ruta (Todas)</option>
+                            <option value="entregada">✅ Entregada</option>
+                            <option value="falta">❌ Falta</option>
+                        </select>
+                    </div>
+
+                    <table id="table-cobro" class="table table-striped">
+                        <thead>
+                            <tr class="header-sortable">
+                                <th onclick="ordenarTabla(this, 0)">N°</th>
+                                <th onclick="ordenarTabla(this, 1)">Paterno ↕</th>
+                                <th onclick="ordenarTabla(this, 2)">Materno ↕</th>
+                                <th onclick="ordenarTabla(this, 3)">Nombre(s) ↕</th>
+                                <th onclick="ordenarTabla(this, 4)" style="text-align: center">H. Ruta ↕</th>
+                                <th onclick="ordenarTabla(this, 5)">Atraso ↕</th>
+                                <th id="th-actividad" onclick="ordenarTabla(this, 6)">Actividad ↕</th>
+                                <th onclick="ordenarTabla(this, 7)">Total ↕</th>
+                                <th>
+                                    <div class="th-checkbox-wrap">
+                                        <input type="checkbox" id="check-all-aprobado"
+                                            onclick="toggleAllAprobado(event)" class="check-all-aprobado">
+                                        <span onclick="ordenarTabla(this, 8)" class="sort-label">Aprobación ↕</span>
+                                    </div>
+                                </th>
+                                <th onclick="ordenarTabla(this, 9)">Pago ↕</th>
+                                <th onclick="ordenarTabla(this, 10)">Observación ↕</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-cobros-body"></tbody>
+                    </table>
                 </div>
-
-                <div class="filter-group">
-                    <input type="text" id="search-cobro" class="search-input search-cobro"
-                        placeholder="🔍 Buscar por nombre, apellido, monto o nota..."
-                        onkeyup="filtrarCobrosAvanzado()" />
-
-                    <select id="filtro-estado" class="search-input filter-inline"
-                        onchange="filtrarCobrosAvanzado()">
-                        <option value="">Estado (Todos)</option>
-                        <option value="aprobado">✅ Aprobado</option>
-                        <option value="pendiente">⚠️ Pendiente</option>
-                    </select>
-
-                    <select id="filtro-ruta" class="search-input filter-inline"
-                        onchange="filtrarCobrosAvanzado()">
-                        <option value="">Hoja de Ruta (Todas)</option>
-                        <option value="entregada">✅ Entregada</option>
-                        <option value="falta">❌ Falta</option>
-                    </select>
-                </div>
-
-                <table id="table-cobro" class="table table-striped">
-                    <thead>
-                        <tr class="header-sortable">
-                            <th onclick="ordenarTabla(this, 0)">N°</th>
-                            <th onclick="ordenarTabla(this, 1)">Paterno ↕</th>
-                            <th onclick="ordenarTabla(this, 2)">Materno ↕</th>
-                            <th onclick="ordenarTabla(this, 3)">Nombre(s) ↕</th>
-                            <th onclick="ordenarTabla(this, 4)" style="text-align: center">H. Ruta ↕</th>
-                            <th onclick="ordenarTabla(this, 5)">Atraso ↕</th>
-                            <th id="th-actividad" onclick="ordenarTabla(this, 6)">Actividad ↕</th>
-                            <th onclick="ordenarTabla(this, 7)">Total ↕</th>
-                            <th>
-                                <div class="th-checkbox-wrap">
-                                    <input type="checkbox" id="check-all-aprobado" onclick="toggleAllAprobado(event)"
-                                        class="check-all-aprobado">
-                                    <span onclick="ordenarTabla(this, 8)" class="sort-label">Aprobación ↕</span>
-                                </div>
-                            </th>
-                            <th onclick="ordenarTabla(this, 9)">Pago ↕</th>
-                            <th onclick="ordenarTabla(this, 10)">Observación ↕</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-cobros-body"></tbody>
-                </table>
             </div>
         </section>
 
@@ -183,7 +187,8 @@
                 <div class="input-group grid-4-cols">
                     <input type="month" id="nuevoPeriodoFecha" />
                     <input type="number" id="metaAtrasoInput" placeholder="Meta Atrasos (Bs)" min="0" step="0.01" />
-                    <input type="number" id="metaActividadInput" placeholder="Meta Actividades (Bs)" min="0" step="0.01" />
+                    <input type="number" id="metaActividadInput" placeholder="Meta Actividades (Bs)" min="0"
+                        step="0.01" />
                     <button class="btn-success" onclick="crearPeriodo()">Crear Periodo</button>
                 </div>
             </div>
@@ -260,6 +265,32 @@
 
     <!-- ================= MODALES ================= -->
 
+    <div id="modal-easter-egg" class="modal" role="dialog" aria-modal="true"
+        aria-labelledby="easter-egg-title">
+        <div class="modal-content easter-egg-content">
+            <div class="easter-egg-heading">
+                <h3 id="easter-egg-title">🪙 Atrapa la moneda</h3>
+                <button type="button" id="btn-cerrar-easter-egg" class="easter-egg-close"
+                    aria-label="Cerrar juego">&times;</button>
+            </div>
+            <p>¡Atrapa 10 monedas antes de que se acabe el tiempo!</p>
+            <div class="easter-egg-score">
+                <span>Monedas: <strong id="easter-egg-score" aria-live="polite">0</strong>/10</span>
+                <span>Tiempo: <strong id="easter-egg-time">15</strong>s</span>
+            </div>
+            <div id="easter-egg-arena" class="easter-egg-arena" aria-label="Zona de juego">
+                <button type="button" id="easter-egg-coin" class="easter-egg-coin"
+                    aria-label="Atrapar moneda">🪙</button>
+            </div>
+            <p id="easter-egg-message" class="easter-egg-message" role="status">¡Vamos!</p>
+            <div class="modal-actions">
+                <button type="button" id="btn-reintentar-easter-egg" class="btn-success"
+                    hidden>Jugar otra vez</button>
+                <button type="button" id="btn-salir-easter-egg" class="btn-modal-cancel">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal: Registrar/Editar Cobro Manual -->
     <div id="modal-cobro" class="modal">
         <div class="modal-content">
@@ -283,8 +314,9 @@
                 <label class="form-label">📄 Respaldo (Hoja de Ruta):</label>
                 <div class="file-upload-row">
                     <!-- El input está oculto, usamos el label como botón estilizado -->
-                    <input type="file" id="input-archivo-ruta" accept="image/*,application/pdf" capture="environment" class="input-file-hidden" onchange="actualizarNombreArchivo(this)" />
-                    
+                    <input type="file" id="input-archivo-ruta" accept="image/*,application/pdf" capture="environment"
+                        class="input-file-hidden" onchange="actualizarNombreArchivo(this)" />
+
                     <label for="input-archivo-ruta" class="btn-primary upload-btn">
                         📸 Escanear / Subir
                     </label>
@@ -292,7 +324,8 @@
                         Sin archivo
                     </span>
                     <!-- Botón para limpiar la selección -->
-                    <button type="button" class="btn-clear-file" onclick="limpiarSeleccionArchivo()" title="Quitar archivo seleccionado">
+                    <button type="button" class="btn-clear-file" onclick="limpiarSeleccionArchivo()"
+                        title="Quitar archivo seleccionado">
                         ❌
                     </button>
                 </div>
@@ -370,8 +403,7 @@
         <div class="modal-card historial-modal-card">
             <div class="modal-header modal-header-history">
                 <h3>📜 Ficha Histórica</h3>
-                <button onclick="cerrarModalHistorial()"
-                    class="btn-close-history">&times;</button>
+                <button onclick="cerrarModalHistorial()" class="btn-close-history">&times;</button>
             </div>
 
             <div class="modal-body historial-body">
@@ -432,6 +464,7 @@
     <script src="js/cobros.js"></script>
     <script src="js/reportes.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/easter-egg.js"></script>
 
 </body>
 
